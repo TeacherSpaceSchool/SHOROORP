@@ -221,7 +221,7 @@ const getNakladnayaSklad2ShoroByData = async (data, organizator, region) => {
 }
 
 const setNakladnayaSklad2Shoro = async (object, id) => {
-        await NakladnayaSklad2Shoro.findOneAndUpdate({_id: id}, {$set: object});
+        await NakladnayaSklad2Shoro.updateOne({_id: id}, {$set: object});
 
 }
 

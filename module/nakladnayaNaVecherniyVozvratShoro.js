@@ -221,7 +221,7 @@ const getNakladnayaNaVecherniyVozvratShoroByData = async (data, organizator, reg
 }
 
 const setNakladnayaNaVecherniyVozvratShoro = async (object, id) => {
-        await NakladnayaNaVecherniyVozvratShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await NakladnayaNaVecherniyVozvratShoro.updateOne({_id: id}, {$set: object});
 
 }
 

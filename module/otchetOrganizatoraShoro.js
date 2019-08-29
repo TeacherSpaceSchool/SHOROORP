@@ -266,7 +266,7 @@ const createOtchetOrganizatoraShoro = async (data, organizator, region, guidOrga
 }
 
 const setOtchetOrganizatoraShoro = async (object, id) => {
-        await OtchetOrganizatoraShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await OtchetOrganizatoraShoro.updateOne({_id: id}, {$set: object});
 
 }
 

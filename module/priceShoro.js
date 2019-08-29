@@ -89,7 +89,7 @@ const addPriceShoro = async (object) => {
 }
 
 const setPriceShoro = async (object, id) => {
-        await PriceShoro.findOneAndUpdate({name: id}, {$set: object});
+        await PriceShoro.updateOne({name: id}, {$set: object});
 
 }
 

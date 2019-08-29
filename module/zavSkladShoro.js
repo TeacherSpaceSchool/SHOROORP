@@ -137,10 +137,10 @@ const setZavSkladShoro = async (object, id) => {
         user.status = object.status;
         user.password = object.password;
         await user.save();
-        await ZavSkladShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await ZavSkladShoro.updateOne({_id: id}, {$set: object});
     } else {
-        await UserShoro.findOneAndUpdate({_id: object.user}, {$set: { email: object.phone, status: object.status}});
-        await ZavSkladShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await UserShoro.updateOne({_id: object.user}, {$set: { email: object.phone, status: object.status}});
+        await ZavSkladShoro.updateOne({_id: id}, {$set: object});
     }
 }
 

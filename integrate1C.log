@@ -54,3 +54,1032 @@ info [Wed Jul 31 2019 17:40:06 GMT+0600 (GMT+06:00)]  { declaration: { attribute
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Aug 29 2019 16:09:08 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'place' },
+       elements:
+        [ { type: 'element',
+            name: 'region',
+            attributes: { guid: '7d68807b-15b8-11e0-83e3-0010c6f42018' },
+            elements:
+             [ { type: 'text', text: 'Верх - 1\r\n        ' },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: 'c577bb4e-8f73-11e1-a267-1c6f65c2a7c6' },
+                 elements: [ { type: 'text', text: 'Лицей  №5' } ] },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: '66098e73-8bfd-11e0-a65b-1c6f6534ba9a' },
+                 elements: [ { type: 'text', text: 'ЭкоБанк' } ] },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: '66098e75-8bfd-11e0-a65b-1c6f6534ba9a' },
+                 elements: [ { type: 'text', text: 'Вефа Центр' } ] } ] },
+          { type: 'element',
+            name: 'region',
+            attributes: { guid: '7d688089-15b8-11e0-83e3-0010c6f42018' },
+            elements:
+             [ { type: 'text', text: 'Жибек-Жолу\r\n        ' },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: '3c1921dd-81e2-11e9-aece-97dcc027fe81' },
+                 elements: [ { type: 'text', text: 'Ложка' } ] },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: 'ac836f09-b9bd-11e1-9b3e-1c6f65c2a7c6' },
+                 elements: [ { type: 'text', text: 'Фрунзе - Панфилова (Парк)' } ] },
+               { type: 'element',
+                 name: 'place',
+                 attributes: { guid: 'e8cf485c-a616-11e1-a0b5-1c6f65c2a7c6' },
+                 elements: [ { type: 'text', text: 'Фрунзе - Белинская' } ] } ] } ] } ] }
+info [Thu Aug 29 2019 16:09:27 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+info [Thu Aug 29 2019 16:13:46 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:14:05 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Aug 29 2019 16:34:04 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Aug 29 2019 16:46:20 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:46:35 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+info [Thu Aug 29 2019 16:46:36 GMT+0600 (GMT+06:00)]  Cannot read property 'date' of null
+info [Thu Aug 29 2019 16:46:42 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+info [Thu Aug 29 2019 16:46:42 GMT+0600 (GMT+06:00)]  Cannot read property 'date' of null
+
+info [Thu Aug 29 2019 16:47:02 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+info [Thu Aug 29 2019 16:47:02 GMT+0600 (GMT+06:00)]  Cannot read property 'date' of null
+
+
+info [Thu Aug 29 2019 16:47:25 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:47:46 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:48:08 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+
+
+
+
+info [Thu Aug 29 2019 16:50:35 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+info [Thu Aug 29 2019 16:51:25 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+
+
+
+
+info [Thu Aug 29 2019 16:52:12 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:52:27 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '01.03.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+
+info [Thu Aug 29 2019 16:53:10 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
+

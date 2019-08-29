@@ -15,6 +15,7 @@ const BlogShoroSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    type: String,
 }, {
     timestamps: true
 });

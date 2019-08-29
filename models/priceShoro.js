@@ -7,9 +7,11 @@ const PriceShoroSchema = mongoose.Schema({
         unique: true
     },
     price: {
-        type: String,
+        type: Number,
         required: true,
-    }
+    },
+    date: Date,
+    guid: String
 }, {
     timestamps: true
 });

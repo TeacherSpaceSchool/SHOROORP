@@ -203,7 +203,7 @@ const addPlanShoro = async (object) => {
 }
 
 const setPlanShoro = async (object, id) => {
-        await PlanShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await PlanShoro.updateOne({_id: id}, {$set: object});
 
 }
 

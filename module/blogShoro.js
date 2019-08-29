@@ -20,7 +20,7 @@ const getBlogShoro = async (search, sort, skip) => {
             'создан',
         ];
         if(sort == undefined||sort=='')
-            sort = '-updatedAt';
+            sort = '-updateOnedAt';
         else if(sort[0]=='название'&&sort[1]=='descending')
             sort = '-name';
         else if(sort[0]=='название'&&sort[1]=='ascending')
@@ -30,9 +30,9 @@ const getBlogShoro = async (search, sort, skip) => {
         else if(sort[0]=='текст'&&sort[1]=='ascending')
             sort = 'text';
         else if(sort[0]=='создан'&&sort[1]=='descending')
-            sort = '-updatedAt';
+            sort = '-updateOnedAt';
         else if(sort[0]=='создан'&&sort[1]=='ascending')
-            sort = 'updatedAt';
+            sort = 'updateOnedAt';
         if(search == ''){
             count = await BlogShoro.count();
             findResult = await BlogShoro
@@ -82,7 +82,7 @@ const getBlogShoro = async (search, sort, skip) => {
             }
             while(image.includes(',http://'))
                 image = image.replace(',http://', '\nhttp://');
-            data.push([image, findResult[i].name, findResult[i].text, format(findResult[i].updatedAt)]);
+            data.push([image, findResult[i].name, findResult[i].text, format(findResult[i].updatedAt), findResult[i].type, findResult[i]._id]);
         }
         return {data: data, count: count, row: row}
    }
@@ -93,7 +93,8 @@ const addBlogShoro = async (object) => {
    }
 
 const setBlogShoro = async (object, id) => {
-        await BlogShoro.findOneAndUpdate({name: id}, {$set: object});
+    console.log(object.type)
+    await BlogShoro.updateOne({name: id}, {$set: object});
 
 }
 

@@ -458,11 +458,11 @@ router.post('/add', async (req, res) => {
                         image.push(myConst.url + 'images/' + filename)
                         imageThumbnail.push(myConst.url + 'thumbnail/' + filename)
                         stream.on('finish', async () => {
-                            let image1 = await Jimp.read(filepath)
+                            /*let image1 = await Jimp.read(filepath)
                             if(image1.bitmap.width>1500||image1.bitmap.height>1500) {
                                 await image1.resize(1500, Jimp.AUTO).write(filepath);
                             }
-                            await image1.resize(320, Jimp.AUTO).write(filepathThumbnail);
+                            await image1.resize(320, Jimp.AUTO).write(filepathThumbnail);*/
                             if(i===parseInt(req.body.fileLength)-1){
                                 if(req.body.name == 'Блог'){
                                     myNew.image = image

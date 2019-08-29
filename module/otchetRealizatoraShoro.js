@@ -318,7 +318,7 @@ const getOtchetRealizatoraShoroByData = async (data, realizator, region, point) 
 }
 
 const setOtchetRealizatoraShoro = async (object, id) => {
-        await OtchetRealizatoraShoro.findOneAndUpdate({_id: id}, {$set: object});
+        await OtchetRealizatoraShoro.updateOne({_id: id}, {$set: object});
         calculateAll(object)
 }
 
@@ -398,7 +398,7 @@ const calculateAll = async (object) => {
                 }
             }
             findDataNakladnayaNaVecherniyVozvratShoro = JSON.stringify(findDataNakladnayaNaVecherniyVozvratShoro)
-            await NakladnayaNaVecherniyVozvratShoro.findOneAndUpdate({_id: findNakladnayaNaVecherniyVozvratShoro._id}, {$set: {dataTable: findDataNakladnayaNaVecherniyVozvratShoro}});
+            await NakladnayaNaVecherniyVozvratShoro.updateOne({_id: findNakladnayaNaVecherniyVozvratShoro._id}, {$set: {dataTable: findDataNakladnayaNaVecherniyVozvratShoro}});
         }
 
         let findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.findOne({data: getTomorrow(object.data), guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
@@ -437,7 +437,7 @@ const calculateAll = async (object) => {
             findDataNakladnayaSklad1Shoro['vydano']['i']['ch10'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ch10'])
             findDataNakladnayaSklad1Shoro['vydano']['i']['ch25'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ch25'])
             findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-            await NakladnayaSklad1Shoro.findOneAndUpdate({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
         }
 
         findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
@@ -476,7 +476,7 @@ const calculateAll = async (object) => {
             findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch10'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch10'])
             findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch25'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch25'])
             findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-            await NakladnayaSklad1Shoro.findOneAndUpdate({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
         }
 
         let findPlan = await PlanShoro.findOne({date: (object.data).substring(3)})
@@ -499,7 +499,7 @@ const calculateAll = async (object) => {
                 }
                 findPlan.current += checkInt(findPlanRegions[i]['current'])
             }
-            await PlanShoro.findOneAndUpdate({_id: findPlan._id}, {
+            await PlanShoro.updateOne({_id: findPlan._id}, {
                 $set: {
                     regions: JSON.stringify(findPlanRegions),
                     current: findPlan.current
@@ -751,7 +751,7 @@ const calculateAll = async (object) => {
             findDataTable['i'] = checkInt(findDataTable['p']['i']) - checkInt(findDataTable['r']['otr']) - checkInt(findDataTable['r']['oo']) - checkInt(findDataTable['r']['inc']) - checkInt(findDataTable['r']['ntp']) - checkInt(findDataTable['r']['att']) - checkInt(findDataTable['r']['at']) - checkInt(findDataTable['r']['vs'])
 
             findDataTable = JSON.stringify(findDataTable)
-            await OtchetOrganizatoraShoro.findOneAndUpdate({_id: findOrganizator._id}, {$set: {dataTable: findDataTable}});
+            await OtchetOrganizatoraShoro.updateOne({_id: findOrganizator._id}, {$set: {dataTable: findDataTable}});
 
 
 

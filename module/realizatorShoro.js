@@ -306,10 +306,10 @@ const setRealizatorShoro = async (object, id) => {
             user.status = object.status;
             user.password = object.password;
             await user.save();
-            await RealizatorShoro.findOneAndUpdate({_id: id}, {$set: object});
+            await RealizatorShoro.updateOne({_id: id}, {$set: object});
         } else {
-            await UserShoro.findOneAndUpdate({_id: object.user}, {$set: {email: object.phone, status: object.status}});
-            await RealizatorShoro.findOneAndUpdate({_id: id}, {$set: object});
+            await UserShoro.updateOne({_id: object.user}, {$set: {email: object.phone, status: object.status}});
+            await RealizatorShoro.updateOne({_id: id}, {$set: object});
         }
     }
 

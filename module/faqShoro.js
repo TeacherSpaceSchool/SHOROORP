@@ -87,7 +87,7 @@ const addFaqShoro = async (object) => {
 }
 
 const setFaqShoro = async (object, id) => {
-        await FaqShoro.findOneAndUpdate({name: id}, {$set: object});
+        await FaqShoro.updateOne({name: id}, {$set: object});
 }
 
 const deleteFaqShoro = async (id) => {

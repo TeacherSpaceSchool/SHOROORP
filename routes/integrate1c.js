@@ -3,6 +3,7 @@ var router = express.Router();
 const PointShoro = require('../models/pointShoro');
 const RegionShoro = require('../models/regionShoro');
 const OrganizatorShoro = require('../models/organizatorShoro');
+const PriceShoro = require('../models/priceShoro');
 const RealizatorShoro = require('../models/realizatorShoro');
 const UserShoro = require('../models/userShoro');
 var logger = require('logger').createLogger('integrate1C.log');
@@ -141,6 +142,32 @@ router.post('/put', async (req, res, next) => {
                         await UserShoro.deleteMany({_id: {$in: object.user}});
                         await RealizatorShoro.deleteMany({guid: req.body.elements[0].elements[i].attributes.guid});
                     }
+                }
+            }
+        }
+        else if(req.body.elements[0].attributes.mode==='product'){
+            let date = req.body.elements[0].attributes.date.split('.')
+            date = new Date(date[1]+'.'+date[0]+'.'+date[2])
+            let find = await PriceShoro.findOne();
+            if(find===null||find.date===undefined||date>find.date){
+                await PriceShoro.deleteMany();
+                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
+                    let name = ''
+                    let price = ''
+                    if(req.body.elements[0].elements[i].elements[0].text.includes('Максым')) name = 'Максым'
+                    else if(req.body.elements[0].elements[i].elements[0].text.includes('Чалап')) name = 'Чалап'
+                    else if(req.body.elements[0].elements[i].elements[0].text.includes('Квас')) name = 'Квас'
+                    else name = 'Стакан Легенда'
+                    for(let i1 = 0; i1<req.body.elements[0].elements[i].elements.length; i1++) {
+                        if(req.body.elements[0].elements[i].elements[i1].name==='price')
+                            price = req.body.elements[0].elements[i].elements[i1].elements[0].text
+                    }let _object = new PriceShoro({
+                        name: name,
+                        price: price,
+                        date: date,
+                        guid: req.body.elements[0].elements[i].attributes.guid
+                    });
+                    await PriceShoro.create(_object);
                 }
             }
         }

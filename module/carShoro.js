@@ -76,7 +76,7 @@ const addCarShoro = async (object) => {
 }
 
 const setCarShoro = async (object, id) => {
-        await CarShoro.findOneAndUpdate({number: id}, {$set: object});
+        await CarShoro.updateOne({number: id}, {$set: object});
 }
 
 const deleteCarShoro = async (id) => {
