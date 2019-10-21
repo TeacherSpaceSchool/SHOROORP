@@ -441,7 +441,6 @@ const calculateAll = async (object) => {
         }
 
         findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
-        findDataNakladnayaSklad1Shoro
         if(findNakladnayaSklad1Shoro!==null){
             findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
             findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25'] = 0

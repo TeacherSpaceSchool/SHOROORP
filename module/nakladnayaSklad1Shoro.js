@@ -212,7 +212,6 @@ const addNakladnayaSklad1Shoro = async (object) => {
             let _object = new NakladnayaSklad1Shoro(object);
             await NakladnayaSklad1Shoro.create(_object);
         }
-
 }
 
 const getNakladnayaSklad1ShoroByData = async (data, organizator, region) => {

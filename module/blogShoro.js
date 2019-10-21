@@ -93,7 +93,6 @@ const addBlogShoro = async (object) => {
    }
 
 const setBlogShoro = async (object, id) => {
-    console.log(object.type)
     await BlogShoro.updateOne({name: id}, {$set: object});
 
 }

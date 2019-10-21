@@ -223,7 +223,6 @@ const addNakladnayaNaPustuyTaruShoro = async (object) => {
 
 const getNakladnayaNaPustuyTaruShoroByData = async (data, organizator, region) => {
         return(await NakladnayaNaPustuyTaruShoro.findOne({data: data, guidOrganizator: organizator, guidRegion: {'$regex': region, '$options': 'i'}}))
-
 }
 
 const setNakladnayaNaPustuyTaruShoro = async (object, id) => {

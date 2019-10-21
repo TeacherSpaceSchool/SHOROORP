@@ -11,6 +11,7 @@ const RealizatorShoro = require('../module/realizatorShoro');
 const RegionShoro = require('../module/regionShoro');
 const ZavSkladShoro = require('../module/zavSkladShoro');
 const NakladnayaNaPustuyTaruShoro = require('../module/nakladnayaNaPustuyTaruShoro');
+const GeoShoro = require('../module/geoShoro');
 const NakladnayaSklad1Shoro = require('../module/nakladnayaSklad1Shoro');
 const FaqShoro = require('../module/faqShoro');
 const NakladnayaNaVecherniyVozvratShoro = require('../module/nakladnayaNaVecherniyVozvratShoro');
@@ -22,7 +23,6 @@ const randomstring = require('randomstring');
 const app = require('../app');
 const fs = require('fs');
 const path = require('path');
-const Jimp = require('jimp');
 const NakladnayaSklad2Shoro = require('../module/nakladnayaSklad2Shoro');
 
 router.post('/get', async (req, res) => {
@@ -66,6 +66,10 @@ router.post('/get', async (req, res) => {
                     await res.send(await PointShoro.getPointShoroRegion(data.region))
                 } else if(req.body.name == 'Регион'){
                     await res.send(await RegionShoro.getRegionShoro(req.body.search, req.body.sort, req.body.skip))
+                } else if(req.body.name == 'Геолокация'){
+                    await res.send(await GeoShoro.getGeoShoro(data))
+                } else if(req.body.name == 'ГеолокацияСохранить'){
+                    await res.send(await GeoShoro.saveGeoShoro(data))
                 } else if(req.body.name == 'Завсклада'){
                     await res.send(await ZavSkladShoro.getZavSkladShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'ПланПоДате'){
@@ -152,6 +156,10 @@ router.post('/get', async (req, res) => {
                     await res.send(await NakladnayaSklad2Shoro.getNakladnayaSklad2ShoroByData(data.data, data.organizator, data.region))
                 } else if(req.body.name == 'Накладная склад №2'){
                     await res.send(await NakladnayaSklad2Shoro.getNakladnayaSklad2ShoroOrganizator(req.body.search, req.body.sort, req.body.skip, user._id))
+                } else if(req.body.name == 'Геолокация'){
+                    await res.send(await GeoShoro.getGeoShoro(data))
+                } else if(req.body.name == 'ГеолокацияСохранить'){
+                    await res.send(await GeoShoro.saveGeoShoro(data))
                 } else if(req.body.name == 'Накладная на вечерний возврат по данным'){
                     await res.send(await NakladnayaNaVecherniyVozvratShoro.getNakladnayaNaVecherniyVozvratShoroByData(data.data, data.organizator, data.region))
                 } else if(req.body.name == 'Накладная на вечерний возврат'){
@@ -224,6 +232,10 @@ router.post('/get', async (req, res) => {
                     await res.send(await FaqShoro.getFaqShoro1(req.body.skip))
                 } else if(req.body.name == 'Рейтинг свой'){
                     await res.send(await OtchetRealizatoraShoro.getReitingMyRealizator(user._id))
+                } else if(req.body.name == 'Геолокация'){
+                    await res.send(await GeoShoro.getGeoShoro(data))
+                } else if(req.body.name == 'ГеолокацияСохранить'){
+                    await res.send(await GeoShoro.saveGeoShoro(data))
                 }
             });
         }
@@ -543,7 +555,6 @@ router.post('/add', async (req, res) => {
                         await res.send(await OtchetRealizatoraShoro.getOtchetRealizatoraShoro(req.body.search, req.body.sort, req.body.skip, req.body.region, req.body.point))
                     }
                     else  if(req.body.name == 'Накладная на пустую тару'){
-                        console.log(req.body.region)
                         if(req.body.id!==undefined)
                             await NakladnayaNaPustuyTaruShoro.setNakladnayaNaPustuyTaruShoro(myNew, req.body.id)
                         await res.send(await NakladnayaNaPustuyTaruShoro.getNakladnayaNaPustuyTaruShoro(req.body.search, req.body.sort, req.body.skip, req.body.region))
@@ -556,7 +567,6 @@ router.post('/add', async (req, res) => {
                     else if(req.body.name == 'Накладная склад №2'){
                         if(req.body.id!==undefined)
                             await NakladnayaSklad2Shoro.setNakladnayaSklad2Shoro(myNew, req.body.id)
-                        console.log(req.body.region)
                         await res.send(await NakladnayaSklad2Shoro.getNakladnayaSklad2Shoro(req.body.search, req.body.sort, req.body.skip, req.body.region))
                     }
                     else if(req.body.name == 'Накладная на вечерний возврат'){
@@ -572,7 +582,6 @@ router.post('/add', async (req, res) => {
                         await res.send(await FaqShoro.getFaqShoro(req.body.search, req.body.sort, req.body.skip))
                     }
                     else  if(req.body.name == 'Накладная на пустую тару сегодня'){
-                        console.log(req.body.region)
                         if(req.body.id!==undefined)
                             await NakladnayaNaPustuyTaruShoro.setNakladnayaNaPustuyTaruShoro(myNew, req.body.id)
                         await res.send(await NakladnayaNaPustuyTaruShoro.getNakladnayaNaPustuyTaruShoroToday(req.body.search, req.body.sort, req.body.skip))

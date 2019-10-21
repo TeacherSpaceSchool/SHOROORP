@@ -60,7 +60,6 @@ const getCarShoro = async (search, sort, skip) => {
         for (let i=0; i<findResult.length; i++){
             data.push([findResult[i].number, format(findResult[i].updatedAt)]);
         }
-        console.log({data: data, count: count, row: row})
         return {data: data, count: count, row: row}
 }
 

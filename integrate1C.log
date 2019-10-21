@@ -1083,3 +1083,2965 @@ info [Thu Aug 29 2019 16:53:10 GMT+0600 (GMT+06:00)]  { declaration: { attribute
                  name: 'liter',
                  elements: [ { type: 'text', text: '0' } ] } ] } ] } ] }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Oct 17 2019 16:26:12 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', size: '0.20' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,2 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', size: '0.40' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,4 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', size: '1.00' },
+            elements: [ { type: 'text', text: 'Бутылки 1,0 бесцветные' } ] } ] } ] }
+
+
+
+
+
+
+
+
+info [Thu Oct 17 2019 16:32:44 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', size: '0.20' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,2 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', size: '0.40' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,4 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', size: '1.00' },
+            elements: [ { type: 'text', text: 'Бутылки 1,0 бесцветные' } ] } ] } ] }
+
+
+
+
+info [Thu Oct 17 2019 16:34:09 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', size: '0.20' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,2 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', size: '0.40' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,4 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', size: '1.00' },
+            elements: [ { type: 'text', text: 'Бутылки 1,0 бесцветные' } ] } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Oct 17 2019 16:37:31 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', size: '0.20' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,2 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', size: '0.40' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,4 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', size: '1.00' },
+            elements: [ { type: 'text', text: 'Бутылки 1,0 бесцветные' } ] } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Oct 17 2019 16:43:01 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'product', date: '02.05.2019' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '01738842-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Максым разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '50.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Чалап разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e' },
+            elements:
+             [ { type: 'text', text: 'Квас разливной\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '60.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '1' } ] } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b7357791-cdfd-11e4-9558-74d435859db6' },
+            elements:
+             [ { type: 'text',
+                 text: 'Стаканы 0,2 бумажные  ЭКОНОМ белый\r\n\t\t' },
+               { type: 'element',
+                 name: 'price',
+                 elements: [ { type: 'text', text: '2.00' } ] },
+               { type: 'element',
+                 name: 'liter',
+                 elements: [ { type: 'text', text: '0' } ] } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', size: '0.20' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,2 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', size: '0.40' },
+            elements:
+             [ { type: 'text', text: 'Стаканы 0,4 бумажные СТАНДАРТ ШОРО' } ] },
+          { type: 'element',
+            name: 'tare',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', size: '1.00' },
+            elements: [ { type: 'text', text: 'Бутылки 1,0 бесцветные' } ] } ] } ] }
+
+
+
+
+info [Thu Oct 17 2019 17:30:09 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Thu Oct 17 2019 17:30:49 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Thu Oct 17 2019 17:31:00 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+info [Thu Oct 17 2019 17:35:32 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '4b01ef12-cc93-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '01.09.2019',
+          from: '92bdab9d-1408-11e0-83e3-0010c6f42018',
+          to: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '48.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '104.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '40.00' } } ] } ] }
+
+
+info [Thu Oct 17 2019 17:36:02 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '4b01ef12-cc93-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '01.09.2019',
+          from: '92bdab9d-1408-11e0-83e3-0010c6f42018',
+          to: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '48.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '104.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '40.00' } } ] } ] }
+
+info [Thu Oct 17 2019 17:37:04 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '4b01ef12-cc93-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '01.09.2019',
+          from: '92bdab9d-1408-11e0-83e3-0010c6f42018',
+          to: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '48.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '104.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '40.00' } } ] } ] }
+
+
+
+info [Fri Oct 18 2019 11:27:23 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+info [Fri Oct 18 2019 11:28:05 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 11:31:13 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 11:32:45 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'manager' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: '93e0bef5-a59a-11e2-beff-1c6f65c2a7c6' },
+            elements: [ { type: 'text', text: 'Абдылдабек уулу Бактияр1' } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: '164c7bdd-abb2-11e1-8a1c-1c6f65c2a7c6' },
+            elements: [ { type: 'text', text: 'Акылбек уулу Алтынбек' } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b10d2462-13ee-11e0-83e3-0010c6f42018' },
+            elements: [ { type: 'text', text: 'Алиев Анарбек Актарбекович' } ] },
+          { type: 'element',
+            name: 'item',
+            attributes: { guid: 'b68fa480-f1a2-11e5-b70c-000854d162a6' },
+            elements: [ { type: 'text', text: 'Аскаров Адилет Тойчубекович' } ] } ] } ] }
+info [Fri Oct 18 2019 11:40:57 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes: { mode: 'manager' },
+       elements:
+        [ { type: 'element',
+            name: 'item',
+            attributes: { guid: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6' },
+            elements: [ { type: 'text', text: 'Дасерон Эвалерн' } ] } ] } ] }
+info [Fri Oct 18 2019 11:41:22 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+info [Fri Oct 18 2019 11:54:47 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 12:01:18 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+info [Fri Oct 18 2019 12:02:18 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 12:02:27 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.09.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 12:09:15 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '01.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 12:09:26 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 12:12:17 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 12:12:26 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 12:13:00 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 12:13:05 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+info [Fri Oct 18 2019 12:14:18 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 12:14:30 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 12:15:44 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 12:15:55 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 12:16:25 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 12:17:23 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 12:26:10 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 14:22:39 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 14:22:59 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 14:23:30 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 14:23:47 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 14:24:27 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdba-15a4-11e0-83e3-0010c6f42018', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '1a366b4a-4ea5-11e8-8c10-cad03a2d8457', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '282bfdbc-15a4-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 14:25:54 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 14:28:13 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 14:28:13 GMT+0600 (GMT+06:00)]  NakladnayaSklad1Shoro validation failed: disabled: Cast to Boolean failed for value "[Function: Boolean]" at path "disabled"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 14:31:09 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 14:45:12 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 14:45:12 GMT+0600 (GMT+06:00)]  checkInt is not defined
+
+
+
+
+
+info [Fri Oct 18 2019 14:48:10 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 14:49:08 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 14:50:06 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 14:50:06 GMT+0600 (GMT+06:00)]  date is not defined
+
+
+info [Fri Oct 18 2019 14:50:31 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+
+
+info [Fri Oct 18 2019 14:51:50 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 14:53:36 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 16:23:16 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 16:23:47 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 16:27:28 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 16:27:29 GMT+0600 (GMT+06:00)]  Cannot read property 'l' of undefined
+
+info [Fri Oct 18 2019 16:28:31 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+
+
+
+info [Fri Oct 18 2019 16:41:02 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 16:42:39 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 16:42:39 GMT+0600 (GMT+06:00)]  Cannot read property 'name' of null
+
+
+info [Fri Oct 18 2019 16:43:35 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 16:48:46 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 17:03:44 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Доливка 1' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 17:34:24 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Доливка 1' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 17:35:03 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 17:36:20 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+info [Fri Oct 18 2019 17:36:42 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+info [Fri Oct 18 2019 17:37:51 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: '92bdabcb-1408-11e0-83e3-0010c6f42018',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Доливка 1' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 17:51:35 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 17:52:00 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+info [Fri Oct 18 2019 17:53:04 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 17:53:18 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+
+
+
+
+
+
+
+
+
+info [Fri Oct 18 2019 17:57:47 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+
+
+
+info [Fri Oct 18 2019 17:59:18 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 18:01:07 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          del: '1',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 18:01:57 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Съем' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }
+info [Fri Oct 18 2019 18:05:57 GMT+0600 (GMT+06:00)]  { declaration: { attributes: { version: '1.0', encoding: 'UTF-8' } },
+  elements:
+   [ { type: 'element',
+       name: 'root',
+       attributes:
+        { mode: 'motion',
+          guid: '53017309-cbe6-11e9-bdd9-e092d3bdbd35',
+          date: '18.10.2019',
+          from: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          to: 'aaa2f5fb-2233-11e6-bdfd-000854d162a6',
+          type: 'Выдача' },
+       elements:
+        [ { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '01738842-54f3-11e8-acad-a2d6152f520e', qty: '552.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '0c33e1e6-54f3-11e8-acad-a2d6152f520e', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: '13c0a322-54f3-11e8-acad-a2d6152f520e', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'b7357791-cdfd-11e4-9558-74d435859db6', qty: '63.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756b2-15a2-11e0-83e3-0010c6f42018', qty: '226.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'c91756c0-15a2-11e0-83e3-0010c6f42018', qty: '170.00' } },
+          { type: 'element',
+            name: 'product',
+            attributes:
+             { guid: 'fa4b613f-159e-11e0-83e3-0010c6f42018', qty: '63.00' } } ] } ] }

@@ -386,7 +386,6 @@ const calculateYear = async (data) => {
         let x = 0;
         let dolivkiM = [], dolivkiCh = [], dolivkiK = [], dolivkiSl = [], dolivkiS02 = [], dolivkiS04 = [], dolivkiB = []
         for(let i1 = 0; i1<data.length; i1++){
-            console.log(data[i1].data)
             if((data[i1].data).includes(day)) {
                 x+=1
                 let addDataTable = JSON.parse(data[i1].dataTable)
