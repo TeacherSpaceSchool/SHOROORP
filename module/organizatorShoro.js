@@ -163,12 +163,12 @@ const getOrganizatorShoroByName = async (phone) => {
 }
 
 const deleteOrganizatorShoro = async (id) => {
-       /* for(let i=0; i<id.length; i++){
+        for(let i=0; i<id.length; i++){
             let object = await OrganizatorShoro.findOne({phone: id[i]})
             await UserShoro.deleteMany({_id: {$in: object.user}});
             await OrganizatorShoro.deleteMany({phone: id[i]});
         }
-*/
+
 }
 
 const getProfileOrganizatorShoro = async (id) => {

@@ -305,22 +305,22 @@ router.post('/delete', async (req, res) => {
                     await CarShoro.deleteCarShoro(JSON.parse(req.body.deleted))
                     await res.send(await CarShoro.getCarShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'Организатор'){
-                    //await OrganizatorShoro.deleteOrganizatorShoro(JSON.parse(req.body.deleted))
+                    await OrganizatorShoro.deleteOrganizatorShoro(JSON.parse(req.body.deleted))
                     await res.send(await OrganizatorShoro.getOrganizatorShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'План'){
                     await PlanShoro.deletePlanShoro(JSON.parse(req.body.deleted))
                     await res.send(await PlanShoro.getPlanShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'Точка'){
-                    //await PointShoro.deletePointShoro(JSON.parse(req.body.deleted))
+                    await PointShoro.deletePointShoro(JSON.parse(req.body.deleted))
                     await res.send(await PointShoro.getPointShoro(req.body.search, req.body.sort, req.body.skip, req.body.region))
                 }  else if(req.body.name == 'Цена'){
                     await PriceShoro.deletePriceShoro(JSON.parse(req.body.deleted))
                     await res.send(await PriceShoro.getPriceShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'Реализатор'){
-                    //await RealizatorShoro.deleteRealizatorShoro(JSON.parse(req.body.deleted))
+                    await RealizatorShoro.deleteRealizatorShoro(JSON.parse(req.body.deleted))
                     await res.send(await RealizatorShoro.getRealizatorShoro(req.body.search, req.body.sort, req.body.skip, req.body.region))
                 } else if(req.body.name == 'Регион'){
-                    //await RegionShoro.deleteRegionShoro(JSON.parse(req.body.deleted))
+                    await RegionShoro.deleteRegionShoro(JSON.parse(req.body.deleted))
                     await res.send(await RegionShoro.getRegionShoro(req.body.search, req.body.sort, req.body.skip))
                 } else if(req.body.name == 'Завсклада'){
                     await ZavSkladShoro.deleteZavSkladShoro(JSON.parse(req.body.deleted))

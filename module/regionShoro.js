@@ -82,7 +82,7 @@ const setRegionShoro = async (object, id) => {
 }
 
 const deleteRegionShoro = async (id) => {
-        //await RegionShoro.deleteMany({name: {$in: id}});
+        await RegionShoro.deleteMany({name: {$in: id}});
 
 }
 

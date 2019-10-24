@@ -163,9 +163,9 @@ router.post('/put', async (req, res, next) => {
                     if(req.body.elements[0].elements[i].name==='item'){
                         let name = ''
                         let price = ''
-                        if(req.body.elements[0].elements[i].attributes.guid==='01738842-54f3-11e8-acad-a2d6152f520e') name = 'Максым'
-                        else if(req.body.elements[0].elements[i].attributes.guid==='0c33e1e6-54f3-11e8-acad-a2d6152f520e') name = 'Чалап'
-                        else if(req.body.elements[0].elements[i].attributes.guid==='13c0a322-54f3-11e8-acad-a2d6152f520e') name = 'Квас'
+                        if(req.body.elements[0].elements[i].elements[0].text.includes('Максым')) name = 'Максым'
+                        else if(req.body.elements[0].elements[i].elements[0].text.includes('Чалап')) name = 'Чалап'
+                        else if(req.body.elements[0].elements[i].elements[0].text.includes('Квас')) name = 'Квас'
                         else name = 'Стакан Легенда'
                         for(let i1 = 0; i1<req.body.elements[0].elements[i].elements.length; i1++) {
                             if(req.body.elements[0].elements[i].elements[i1].name==='price')
@@ -180,7 +180,7 @@ router.post('/put', async (req, res, next) => {
                         await PriceShoro.create(_object);
                     } else if(req.body.elements[0].elements[i].name==='tare') {
                         let _object = new TaraShoro({
-                            name: req.body.elements[0].elements[i].elements[0],
+                            name: req.body.elements[0].elements[i].elements[0].text,
                             size: req.body.elements[0].elements[i].attributes.size,
                             date: date,
                             guid: req.body.elements[0].elements[i].attributes.guid
@@ -189,52 +189,20 @@ router.post('/put', async (req, res, next) => {
                     }
                 }
             }
-            console.log(req.body.elements[0].elements)
         }
         else if(req.body.elements[0].attributes.mode==='motion'){
             let date = req.body.elements[0].attributes.date.split('.')
             date = date[0]+' '+month1[parseInt(date[1])-1]+' '+date[2]
             if(req.body.elements[0].attributes.type==='Выдача'){
                 let organizator = await OrganizatorShoro.findOne({guid: req.body.elements[0].attributes.to})
-                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
-                    let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                    if(item!==null&&item.name !== 'Стакан Легенда'){
-                        let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
-                        if(findNakladnayaSklad1Shoro===null){
-                            let _object = new NakladnayaSklad1Shoro({
-                                dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
-                                data: date,
-                                organizator: organizator.name,
-                                region: organizator.region,
-                                disabled: false,
-                                guidRegion: organizator.guidRegion,
-                                guidOrganizator: organizator.guid,
-                            });
-                            findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
-                        }
-                        let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
-                        if(item.name === 'Максым'){
-                            findDataNakladnayaSklad1Shoro['vydano']['r']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
-                        }
-                        else if(item.name === 'Чалап'){
-                            findDataNakladnayaSklad1Shoro['vydano']['r']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
-                        }
-                        else if(item.name === 'Квас'){
-                            findDataNakladnayaSklad1Shoro['vydano']['r']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
-                        }
-                        findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-                        await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
-                    } else {
-                        if(item === null)
-                            item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                        if(item!==null) {
-                            let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
-                            if(findNakladnayaSklad2Shoro===null){
-                                let _object = new NakladnayaSklad2Shoro({
-                                    dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                if(organizator!==null) {
+                    for (let i = 0; i < req.body.elements[0].elements.length; i++) {
+                        let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                        if (item !== null && item.name !== 'Стакан Легенда') {
+                            let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
+                            if (findNakladnayaSklad1Shoro === null) {
+                                let _object = new NakladnayaSklad1Shoro({
+                                    dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
                                     data: date,
                                     organizator: organizator.name,
                                     region: organizator.region,
@@ -242,72 +210,74 @@ router.post('/put', async (req, res, next) => {
                                     guidRegion: organizator.guidRegion,
                                     guidOrganizator: organizator.guid,
                                 });
-                                findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
                             }
-                            let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
-                            if(item.name === 'Стакан Легенда'){
-                                findDataNakladnayaSklad2Shoro['vydano']['r']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                            let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+                            if (item.name === 'Максым') {
+                                findDataNakladnayaSklad1Shoro['vydano']['r']['ml'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
                             }
-                            else if(item.size === '0.20'){
-                                findDataNakladnayaSklad2Shoro['vydano']['r']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                            else if (item.name === 'Чалап') {
+                                findDataNakladnayaSklad1Shoro['vydano']['r']['chl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
                             }
-                            else if(item.size === '0.40'){
-                                findDataNakladnayaSklad2Shoro['vydano']['r']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                            else if (item.name === 'Квас') {
+                                findDataNakladnayaSklad1Shoro['vydano']['r']['kl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
                             }
-                            else if(item.size === '1.00'){
-                                findDataNakladnayaSklad2Shoro['vydano']['r']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                            findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
+                            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+                        } else {
+                            if (item === null)
+                                item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                            if (item !== null) {
+                                let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
+                                if (findNakladnayaSklad2Shoro === null) {
+                                    let _object = new NakladnayaSklad2Shoro({
+                                        dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                                        data: date,
+                                        organizator: organizator.name,
+                                        region: organizator.region,
+                                        disabled: false,
+                                        guidRegion: organizator.guidRegion,
+                                        guidOrganizator: organizator.guid,
+                                    });
+                                    findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                }
+                                let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+                                if (item.name === 'Стакан Легенда') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['r']['l'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                                }
+                                else if (item.size === '0.20') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['r']['sh02'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                                }
+                                else if (item.size === '0.40') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['r']['sh04'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                                }
+                                else if (item.size === '1.00') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['r']['b'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                                }
+                                findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+                                await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                             }
-                            findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
-                            await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                         }
                     }
                 }
             }
             else if(req.body.elements[0].attributes.type==='Доливка 1'){
                 let organizator = await OrganizatorShoro.findOne({guid: req.body.elements[0].attributes.to})
-                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
-                    let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                    if(item!==null&&item.name !== 'Стакан Легенда'){
-                        let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
-                        if(findNakladnayaSklad1Shoro===null){
-                            let _object = new NakladnayaSklad1Shoro({
-                                dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
-                                data: date,
-                                organizator: organizator.name,
-                                region: organizator.region,
-                                disabled: false,
-                                guidRegion: organizator.guidRegion,
-                                guidOrganizator: organizator.guid,
-                            });
-                            findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
-                        }
-                        let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
-                        if(item.name === 'Максым'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d1']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
-                        }
-                        else if(item.name === 'Чалап'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d1']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
-                        }
-                        else if(item.name === 'Квас'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d1']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
-                        }
-                        findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-                        await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
-                    } else {
-                        if(item === null)
-                            item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                        if(item!==null) {
-                            let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
-                            if(findNakladnayaSklad2Shoro===null){
-                                let _object = new NakladnayaSklad2Shoro({
-                                    dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                if(organizator!==null) {
+                    for (let i = 0; i < req.body.elements[0].elements.length; i++) {
+                        let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                        if (item !== null && item.name !== 'Стакан Легенда') {
+                            let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
+                            if (findNakladnayaSklad1Shoro === null) {
+                                let _object = new NakladnayaSklad1Shoro({
+                                    dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
                                     data: date,
                                     organizator: organizator.name,
                                     region: organizator.region,
@@ -315,72 +285,74 @@ router.post('/put', async (req, res, next) => {
                                     guidRegion: organizator.guidRegion,
                                     guidOrganizator: organizator.guid,
                                 });
-                                findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
                             }
-                            let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
-                            if(item.name === 'Стакан Легенда'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d1']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                            let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+                            if (item.name === 'Максым') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d1']['ml'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
                             }
-                            else if(item.size === '0.20'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                            else if (item.name === 'Чалап') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d1']['chl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
                             }
-                            else if(item.size === '0.40'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                            else if (item.name === 'Квас') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d1']['kl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
                             }
-                            else if(item.size === '1.00'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d1']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                            findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
+                            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+                        } else {
+                            if (item === null)
+                                item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                            if (item !== null) {
+                                let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
+                                if (findNakladnayaSklad2Shoro === null) {
+                                    let _object = new NakladnayaSklad2Shoro({
+                                        dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                                        data: date,
+                                        organizator: organizator.name,
+                                        region: organizator.region,
+                                        disabled: false,
+                                        guidRegion: organizator.guidRegion,
+                                        guidOrganizator: organizator.guid,
+                                    });
+                                    findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                }
+                                let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+                                if (item.name === 'Стакан Легенда') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d1']['l'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                                }
+                                else if (item.size === '0.20') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                                }
+                                else if (item.size === '0.40') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                                }
+                                else if (item.size === '1.00') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d1']['b'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                                }
+                                findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+                                await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                             }
-                            findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
-                            await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                         }
                     }
                 }
             }
             else if(req.body.elements[0].attributes.type==='Доливка 2'){
                 let organizator = await OrganizatorShoro.findOne({guid: req.body.elements[0].attributes.to})
-                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
-                    let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                    if(item!==null&&item.name !== 'Стакан Легенда'){
-                        let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
-                        if(findNakladnayaSklad1Shoro===null){
-                            let _object = new NakladnayaSklad1Shoro({
-                                dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
-                                data: date,
-                                organizator: organizator.name,
-                                region: organizator.region,
-                                disabled: false,
-                                guidRegion: organizator.guidRegion,
-                                guidOrganizator: organizator.guid,
-                            });
-                            findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
-                        }
-                        let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
-                        if(item.name === 'Максым'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d2']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
-                        }
-                        else if(item.name === 'Чалап'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d2']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
-                        }
-                        else if(item.name === 'Квас'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d2']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
-                        }
-                        findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-                        await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
-                    } else {
-                        if(item === null)
-                            item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                        if(item!==null) {
-                            let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
-                            if(findNakladnayaSklad2Shoro===null){
-                                let _object = new NakladnayaSklad2Shoro({
-                                    dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                if(organizator!==null) {
+                    for (let i = 0; i < req.body.elements[0].elements.length; i++) {
+                        let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                        if (item !== null && item.name !== 'Стакан Легенда') {
+                            let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
+                            if (findNakladnayaSklad1Shoro === null) {
+                                let _object = new NakladnayaSklad1Shoro({
+                                    dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
                                     data: date,
                                     organizator: organizator.name,
                                     region: organizator.region,
@@ -388,72 +360,74 @@ router.post('/put', async (req, res, next) => {
                                     guidRegion: organizator.guidRegion,
                                     guidOrganizator: organizator.guid,
                                 });
-                                findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
                             }
-                            let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
-                            if(item.name === 'Стакан Легенда'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d2']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                            let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+                            if (item.name === 'Максым') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d2']['ml'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
                             }
-                            else if(item.size === '0.20'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                            else if (item.name === 'Чалап') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d2']['chl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
                             }
-                            else if(item.size === '0.40'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                            else if (item.name === 'Квас') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d2']['kl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
                             }
-                            else if(item.size === '1.00'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d2']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                            findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
+                            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+                        } else {
+                            if (item === null)
+                                item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                            if (item !== null) {
+                                let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
+                                if (findNakladnayaSklad2Shoro === null) {
+                                    let _object = new NakladnayaSklad2Shoro({
+                                        dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                                        data: date,
+                                        organizator: organizator.name,
+                                        region: organizator.region,
+                                        disabled: false,
+                                        guidRegion: organizator.guidRegion,
+                                        guidOrganizator: organizator.guid,
+                                    });
+                                    findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                }
+                                let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+                                if (item.name === 'Стакан Легенда') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d2']['l'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                                }
+                                else if (item.size === '0.20') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                                }
+                                else if (item.size === '0.40') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                                }
+                                else if (item.size === '1.00') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d2']['b'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                                }
+                                findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+                                await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                             }
-                            findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
-                            await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                         }
                     }
                 }
             }
             else if(req.body.elements[0].attributes.type==='Доливка 3'){
                 let organizator = await OrganizatorShoro.findOne({guid: req.body.elements[0].attributes.to})
-                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
-                    let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                    if(item!==null&&item.name !== 'Стакан Легенда'){
-                        let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
-                        if(findNakladnayaSklad1Shoro===null){
-                            let _object = new NakladnayaSklad1Shoro({
-                                dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
-                                data: date,
-                                organizator: organizator.name,
-                                region: organizator.region,
-                                disabled: false,
-                                guidRegion: organizator.guidRegion,
-                                guidOrganizator: organizator.guid,
-                            });
-                            findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
-                        }
-                        let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
-                        if(item.name === 'Максым'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
-                        }
-                        else if(item.name === 'Чалап'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
-                        }
-                        else if(item.name === 'Квас'){
-                            findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
-                        }
-                        findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-                        await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
-                    } else {
-                        if(item === null)
-                            item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                        if(item!==null) {
-                            let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
-                            if(findNakladnayaSklad2Shoro===null){
-                                let _object = new NakladnayaSklad2Shoro({
-                                    dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                if(organizator!==null) {
+                    for (let i = 0; i < req.body.elements[0].elements.length; i++) {
+                        let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                        if (item !== null && item.name !== 'Стакан Легенда') {
+                            let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
+                            if (findNakladnayaSklad1Shoro === null) {
+                                let _object = new NakladnayaSklad1Shoro({
+                                    dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
                                     data: date,
                                     organizator: organizator.name,
                                     region: organizator.region,
@@ -461,72 +435,74 @@ router.post('/put', async (req, res, next) => {
                                     guidRegion: organizator.guidRegion,
                                     guidOrganizator: organizator.guid,
                                 });
-                                findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
                             }
-                            let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
-                            if(item.name === 'Стакан Легенда'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d3']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                            let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+                            if (item.name === 'Максым') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
                             }
-                            else if(item.size === '0.20'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                            else if (item.name === 'Чалап') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
                             }
-                            else if(item.size === '0.40'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                            else if (item.name === 'Квас') {
+                                findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
                             }
-                            else if(item.size === '1.00'){
-                                findDataNakladnayaSklad2Shoro['vydano']['d3']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                            findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
+                            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+                        } else {
+                            if (item === null)
+                                item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                            if (item !== null) {
+                                let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
+                                if (findNakladnayaSklad2Shoro === null) {
+                                    let _object = new NakladnayaSklad2Shoro({
+                                        dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                                        data: date,
+                                        organizator: organizator.name,
+                                        region: organizator.region,
+                                        disabled: false,
+                                        guidRegion: organizator.guidRegion,
+                                        guidOrganizator: organizator.guid,
+                                    });
+                                    findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                }
+                                let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+                                if (item.name === 'Стакан Легенда') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d3']['l'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+                                }
+                                else if (item.size === '0.20') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+                                }
+                                else if (item.size === '0.40') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+                                }
+                                else if (item.size === '1.00') {
+                                    findDataNakladnayaSklad2Shoro['vydano']['d3']['b'] = req.body.elements[0].attributes.del === '1' ? 0 : checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+                                }
+                                findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+                                await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                             }
-                            findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
-                            await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                         }
                     }
                 }
             }
             else if(req.body.elements[0].attributes.type==='Съем'){
                 let organizator = await OrganizatorShoro.findOne({guid: req.body.elements[0].attributes.from})
-                for(let i = 0; i<req.body.elements[0].elements.length; i++) {
-                    let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                    if(item!==null&&item.name !== 'Стакан Легенда'){
-                        let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
-                        if(findNakladnayaSklad1Shoro===null){
-                            let _object = new NakladnayaSklad1Shoro({
-                                dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
-                                data: date,
-                                organizator: organizator.name,
-                                region: organizator.region,
-                                disabled: false,
-                                guidRegion: organizator.guidRegion,
-                                guidOrganizator: organizator.guid,
-                            });
-                            findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
-                        }
-                        let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
-                        if(item.name === 'Максым'){
-                            findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'])
-                        }
-                        else if(item.name === 'Чалап'){
-                            findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vozvrat']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'])
-                        }
-                        else if(item.name === 'Квас'){
-                            findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                            findDataNakladnayaSklad1Shoro['vozvrat']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'])
-                        }
-                        findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
-                        await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
-                    } else {
-                        if(item === null)
-                            item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
-                        if(item!==null) {
-                            let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
-                            if(findNakladnayaSklad2Shoro===null){
-                                let _object = new NakladnayaSklad2Shoro({
-                                    dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                if(organizator!==null){
+                    for(let i = 0; i<req.body.elements[0].elements.length; i++) {
+                        let item = await PriceShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                        if(item!==null&&item.name !== 'Стакан Легенда'){
+                            let findNakladnayaSklad1Shoro = await NakladnayaSklad1ShoroModule.getNakladnayaSklad1ShoroByData(date, organizator.guid, organizator.guidRegion)
+                            if(findNakladnayaSklad1Shoro===null){
+                                let _object = new NakladnayaSklad1Shoro({
+                                    dataTable: '{"vydano":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}},"vozvrat":{"n":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false},"r":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d1":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d2":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"d3":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"s":{"m25":"","ml":"","ch25":"","ch10":"","chl":"","k25":"","k10":"","kl":"","o":false,"p":false},"i":{"m25":"","ml":"","ch25":0,"ch10":0,"chl":0,"k25":"","k10":"","kl":"","o":false,"p":false}}}',
                                     data: date,
                                     organizator: organizator.name,
                                     region: organizator.region,
@@ -534,33 +510,65 @@ router.post('/put', async (req, res, next) => {
                                     guidRegion: organizator.guidRegion,
                                     guidOrganizator: organizator.guid,
                                 });
-                                findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.create(_object);
                             }
-                            let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
-                            if(item.name === 'Стакан Легенда'){
-                                findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vozvrat']['iv']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'])
+                            let findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+                            if(item.name === 'Максым'){
+                                findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vozvrat']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'])
+                            }
+                            else if(item.name === 'Чалап'){
+                                findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vozvrat']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'])
+                            }
+                            else if(item.name === 'Квас'){
+                                findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                findDataNakladnayaSklad1Shoro['vozvrat']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'])
+                            }
+                            findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
+                            await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
+                        } else {
+                            if(item === null)
+                                item = await TaraShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
+                            if(item!==null) {
+                                let findNakladnayaSklad2Shoro = await NakladnayaSklad2ShoroModule.getNakladnayaSklad2ShoroByData(date, organizator.guid, organizator.guidRegion)
+                                if(findNakladnayaSklad2Shoro===null){
+                                    let _object = new NakladnayaSklad2Shoro({
+                                        dataTable: '{"vydano":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}},"vozvrat":{"r":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d1":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d2":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"d3":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"i":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"v":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"s":{"s02":"","s0502":"","sh02":"","s04":"","s0504":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false},"iv":{"s02":"","sh02":"","s04":"","sh04":"","l":"","b":"","pm":"","pv":"","o":false,"p":false}}}',
+                                        data: date,
+                                        organizator: organizator.name,
+                                        region: organizator.region,
+                                        disabled: false,
+                                        guidRegion: organizator.guidRegion,
+                                        guidOrganizator: organizator.guid,
+                                    });
+                                    findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.create(_object);
+                                }
+                                let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+                                if(item.name === 'Стакан Легенда'){
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['iv']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'])
 
-                           }
-                            else if(item.size === '0.20'){
-                                findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'])
+                                }
+                                else if(item.size === '0.20'){
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'])
 
+                                }
+                                else if(item.size === '0.40'){
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'])
+                                }
+                                else if(item.size === '1.00'){
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
+                                    findDataNakladnayaSklad2Shoro['vozvrat']['iv']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'])
+                                }
+                                findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+                                await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                             }
-                            else if(item.size === '0.40'){
-                                findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'])
-                            }
-                            else if(item.size === '1.00'){
-                                findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'] = req.body.elements[0].attributes.del==='1'?0:checkInt(req.body.elements[0].elements[i].attributes.qty)
-                                findDataNakladnayaSklad2Shoro['vozvrat']['iv']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'])
-                            }
-                            findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
-                            await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
                         }
                     }
                 }
-
             }
         }
         await res.status(200);

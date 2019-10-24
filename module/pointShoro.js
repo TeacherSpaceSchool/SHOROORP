@@ -173,9 +173,9 @@ const setPointShoro = async (object, id) => {
 }
 
 const deletePointShoro = async (id) => {
-        /*for(let i=0; i<id.length; i++){
+        for(let i=0; i<id.length; i++){
             await PointShoro.deleteMany({name: {$in: id[i].split('|')[0]}, region: {$in: id[i].split('|')[1]}});
-        }*/
+        }
 }
 
 const getPointWithRegion = async () => {
