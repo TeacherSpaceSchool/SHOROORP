@@ -229,7 +229,8 @@ const deleteNakladnayaSklad1Shoro = async (id) => {
         let id1 = id[i].split('|')
         id1[0] = id1[1].split(': ')[0]
         id1[1] = id1[1].split(': ')[1]
-        await NakladnayaSklad1Shoro.deleteMany({data: id1[2],
+        await NakladnayaSklad1Shoro.deleteMany({
+            data: id1[2],
             guidOrganizator: id1[0],
             guidRegion: id1[1]})
     }

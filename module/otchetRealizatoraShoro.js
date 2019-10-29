@@ -291,7 +291,13 @@ const getOtchetRealizatoraShoroToday = async (search, sort, skip, region) => {
                 .limit(skip1);
         }
         for (let i=0; i<findResult.length; i++){
-            data.push([findResult[i].realizator + ': ' + findResult[i].region + ' - ' + findResult[i].point, findResult[i].data, findResult[i].guidRegion, findResult[i].guidPoint, findResult[i].guidRealizator]);
+            data.push([
+                findResult[i].realizator + ': ' + findResult[i].region + ' - ' + findResult[i].point,
+                findResult[i].data,
+                findResult[i].guidRegion,
+                findResult[i].guidPoint,
+                findResult[i].guidRealizator
+            ]);
          }
         return {data: data, count: count, row: row}
 
@@ -325,10 +331,6 @@ const setOtchetRealizatoraShoro = async (object, id) => {
 const deleteOtchetRealizatoraShoro = async (id) => {
         for(let i=0; i<id.length; i++){
             let id1 = id[i].split('|')
-            id1[0] = id1[2].split(': ')[0]
-            id1[1] = id1[2].split(': ')[1].split(' - ')[0]
-            id1[2] = id1[2].split(': ')[1].split(' - ')[1]
-
             let object = await OtchetRealizatoraShoro.findOne({
                 guidRealizator: id1[0],
                 guidRegion: id1[1],
