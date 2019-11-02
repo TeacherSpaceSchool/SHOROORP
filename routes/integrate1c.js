@@ -13,6 +13,7 @@ const RealizatorShoro = require('../models/realizatorShoro');
 const UserShoro = require('../models/userShoro');
 let logger = require('logger').createLogger('integrate1C.log');
 let { checkInt, month1 } = require('../module/const');
+let { generateXML } = require('../module/outXMLShoro');
 
 /* GET home page. */
 router.post('/put', async (req, res, next) => {
@@ -573,6 +574,19 @@ router.post('/put', async (req, res, next) => {
         }
         await res.status(200);
         await res.end('success')
+    } catch (err) {
+        logger.info(err.message);
+        console.error(err)
+        res.status(501);
+        res.end('error')
+    }
+});
+
+router.get('/out', async (req, res, next) => {
+    res.set('Content+Type', 'application/xml');
+    try{
+        await res.status(200);
+        await res.end(await generateXML())
     } catch (err) {
         logger.info(err.message);
         console.error(err)

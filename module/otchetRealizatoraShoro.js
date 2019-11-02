@@ -12,6 +12,7 @@ const skip1 = require('../module/const').skip;
 const checkInt = require('../module/const').checkInt;
 const checkMonth = require('../module/const').checkMonth;
 const getToday = require('../module/const').getToday;
+const prepareXML = require('../module/outXMLShoro').prepareXML;
 
 const getOtchetRealizatoraShoroOrganizator = async (search, sort, skip, id, point) => {
         let findResult = [], data = [], count;
@@ -307,7 +308,8 @@ const addOtchetRealizatoraShoro = async (object) => {
         if(await OtchetRealizatoraShoro.findOne({data: object.data, guidRealizator: object.guidRealizator, guidPoint: object.guidPoint})===null){
             let _object = new OtchetRealizatoraShoro(object);
             await OtchetRealizatoraShoro.create(_object)
-            calculateAll(object)
+            await calculateAll(object)
+            await prepareXML(object.data, object.guidRegion, object.guidOrganizator)
         }
 }
 
@@ -324,8 +326,9 @@ const getOtchetRealizatoraShoroByData = async (data, realizator, region, point) 
 }
 
 const setOtchetRealizatoraShoro = async (object, id) => {
-        await OtchetRealizatoraShoro.updateOne({_id: id}, {$set: object});
-        calculateAll(object)
+    await OtchetRealizatoraShoro.updateOne({_id: id}, {$set: object});
+    await calculateAll(object)
+    await prepareXML(object.data, object.guidRegion, object.guidOrganizator)
 }
 
 const deleteOtchetRealizatoraShoro = async (id) => {
@@ -345,7 +348,8 @@ const deleteOtchetRealizatoraShoro = async (id) => {
                 data: id1[3],
                 })
 
-            calculateAll(object)
+            await calculateAll(object)
+            await prepareXML(object.data, object.guidRegion, object.guidOrganizator)
 
         }
 

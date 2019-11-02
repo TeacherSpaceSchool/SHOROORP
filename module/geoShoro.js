@@ -1,8 +1,6 @@
 const GeoShoro = require('../models/geoPointShoro');
 
 const getGeoShoro = async (data) => {
-    console.log(await GeoShoro
-        .find())
     return await GeoShoro
         .find({
             guidRegion: {'$regex': data.guidRegion, '$options': 'i'},
@@ -12,7 +10,6 @@ const getGeoShoro = async (data) => {
 }
 
 const saveGeoShoro = async (data) => {
-    console.log(data.date)
     if((await GeoShoro.find({guidRegion: data.guidRegion, date: data.date, guidPoint: data.guidPoint})).length===0){
         let _object = new GeoShoro({
             point: data.point,

@@ -20,7 +20,7 @@ const getRealizatorShoroByPoint = async (point, id) => {
     let data = await RealizatorShoro.findOne({guidPoint: point, guidRegion: {'$regex': guidRegion, '$options': 'i'}})
     let res = {
         name: data.name,
-        guidм: data.guid,
+        guid: data.guid,
         region: data.region,
         point: data.point,
         guidRegion: data.guidRegion,
