@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aef3c9e9-2922-42a5-aaa5-79ce22b59d1a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/precache-manifest.4b778541e3dbaef99d25636932b11aae.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/static/js/7.e8766a19.chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/static/js/7.e8766a19.chunk.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/static/js/runtime~main.9239425e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/static/js/runtime~main.9239425e.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/asset-manifest.json" afterPath="$PROJECT_DIR$/admin/asset-manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.html" afterPath="$PROJECT_DIR$/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/service-worker.js" afterPath="$PROJECT_DIR$/admin/service-worker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integrate1C.log" afterPath="$PROJECT_DIR$/integrate1C.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,7 +27,29 @@
     <favorites_list name="museum-api" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="integrate1c.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-373">
+              <caret line="199" column="83" lean-forward="false" selection-start-line="199" selection-start-column="83" selection-end-line="199" selection-end-column="83" />
+              <folding>
+                <element signature="e#1102#3324#0" expanded="false" />
+                <element signature="e#3388#8214#0" expanded="false" />
+                <element signature="e#8279#10585#0" expanded="false" />
+                <element signature="e#10651#12969#0" expanded="false" />
+                <element signature="e#13916#15880#0" expanded="false" />
+                <element signature="e#18893#20661#0" expanded="false" />
+                <element signature="e#24179#34550#0" expanded="false" />
+                <element signature="e#34889#45260#0" expanded="false" />
+                <element signature="e#45599#55970#0" expanded="false" />
+                <element signature="e#56302#66697#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -526,12 +556,12 @@
       <workItem from="1572692904369" duration="994000" />
       <workItem from="1572847951218" duration="1116000" />
       <workItem from="1574847039769" duration="8000" />
-      <workItem from="1574847066010" duration="261000" />
+      <workItem from="1574847066010" duration="1884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1493105000" />
+    <option name="totallyTimeSpent" value="1494728000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,13 +574,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.85060567" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.84826326" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26379544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26379544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.14939435" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.15173675" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31090176" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -954,13 +985,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="-373">
+          <caret line="199" column="83" lean-forward="false" selection-start-line="199" selection-start-column="83" selection-end-line="199" selection-end-column="83" />
           <folding>
             <element signature="e#1102#3324#0" expanded="false" />
             <element signature="e#3388#8214#0" expanded="false" />
             <element signature="e#8279#10585#0" expanded="false" />
-            <element signature="e#13476#23840#0" expanded="false" />
+            <element signature="e#10651#12969#0" expanded="false" />
             <element signature="e#13916#15880#0" expanded="false" />
             <element signature="e#18893#20661#0" expanded="false" />
             <element signature="e#24179#34550#0" expanded="false" />
