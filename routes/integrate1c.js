@@ -7,6 +7,7 @@ const NakladnayaSklad1ShoroModule = require('../module/nakladnayaSklad1Shoro');
 const NakladnayaSklad1Shoro = require('../models/nakladnayaSklad1Shoro');
 const NakladnayaSklad2ShoroModule = require('../module/nakladnayaSklad2Shoro');
 const NakladnayaSklad2Shoro = require('../models/nakladnayaSklad2Shoro');
+const OutXMLShoro = require('../models/outXMLShoro');
 const PriceShoro = require('../models/priceShoro');
 const TaraShoro = require('../models/taraShoro');
 const RealizatorShoro = require('../models/realizatorShoro');
@@ -587,6 +588,20 @@ router.get('/out', async (req, res, next) => {
     try{
         await res.status(200);
         await res.end(await generateXML())
+    } catch (err) {
+        logger.info(err.message);
+        console.error(err)
+        res.status(501);
+        res.end('error')
+    }
+});
+
+router.get('/delete', async (req, res, next) => {
+    res.set('Content+Type', 'application/xml');
+    try{
+        await res.status(200);
+        await OutXMLShoro.deleteMany()
+        await res.end('success')
     } catch (err) {
         logger.info(err.message);
         console.error(err)

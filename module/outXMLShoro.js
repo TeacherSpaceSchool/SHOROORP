@@ -96,9 +96,9 @@ module.exports.generateXML = async ()=>{
     let result = [ { root: [ { _attr: { mode: 'sales'} }] } ];
     let outXMLShoros = await OutXMLShoro.find()
     for(let i=0;i<outXMLShoros.length;i++){
-        let item = { item: [{ _attr: { mode: 'sales', date: outXMLShoros[i].data.date, manager: outXMLShoros[i].guidOrganizator, region: outXMLShoros[i].guidRegion}}]};
+        let item = { item: [{ _attr: { date: outXMLShoros[i].data.date, manager: outXMLShoros[i].guidOrganizator, region: outXMLShoros[i].guidRegion}}]};
         for(let ii=0;ii<outXMLShoros[i].data.points.length;ii++){
-            let place = { place: [{ _attr: { mode: 'sales', guid: outXMLShoros[i].data.points[ii].guid, seller: outXMLShoros[i].data.points[ii].seller, time_from: outXMLShoros[i].data.points[ii].time_from, time_to: outXMLShoros[i].data.points[ii].time_to, cash: outXMLShoros[i].data.points[ii].cash, rent: outXMLShoros[i].data.points[ii].rent, meal: outXMLShoros[i].data.points[ii].meal}}]};
+            let place = { place: [{ _attr: { guid: outXMLShoros[i].data.points[ii].guid, seller: outXMLShoros[i].data.points[ii].seller, time_from: outXMLShoros[i].data.points[ii].time_from, time_to: outXMLShoros[i].data.points[ii].time_to, cash: outXMLShoros[i].data.points[ii].cash, rent: outXMLShoros[i].data.points[ii].rent, meal: outXMLShoros[i].data.points[ii].meal}}]};
             for(let iii=0;iii<outXMLShoros[i].data.points[ii].products.length;iii++){
                 place.place.push({ product: [{ _attr: { guid: outXMLShoros[i].data.points[ii].products[iii].guid,  issued: outXMLShoros[i].data.points[ii].products[iii].issued,  sold: outXMLShoros[i].data.points[ii].products[iii].sold }}]})
             }
@@ -110,7 +110,6 @@ module.exports.generateXML = async ()=>{
         (result[0].root).push(item)
     }
     result = xml(result, true)
-    await OutXMLShoro.deleteMany()
     return result
 }
 
