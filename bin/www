@@ -2,7 +2,7 @@
 const cluster = require('cluster');
 const os = require('os');
 if (cluster.isMaster) {
-    let cpuCount = /*os.cpus().length*/1
+    let cpuCount = os.cpus().length
     for (let i = 0; i < cpuCount; i += 1) {
         cluster.fork();
         console.log('cluster '+i+' run')
@@ -21,12 +21,12 @@ if (cluster.isMaster) {
     const fs = require('fs');
     const path = require('path');
     const options = {
-        key: fs.readFileSync(path.join(__dirname, 'private.key')),
-        cert: fs.readFileSync(path.join(__dirname, 'certificate.crt')),
-        ca: [
+        key: fs.readFileSync(path.join(__dirname, '21711.key')),
+        cert: fs.readFileSync(path.join(__dirname, '315681899.crt')),
+        /*ca: [
             fs.readFileSync(path.join(__dirname, 's1.crt')),
             fs.readFileSync(path.join(__dirname, 's2.crt'))
-        ],
+        ],*/
     };
 
     /**
