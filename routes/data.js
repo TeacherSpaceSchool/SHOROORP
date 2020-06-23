@@ -177,7 +177,8 @@ router.post('/get', async (req, res) => {
                 } else if(req.body.name == 'Все отчеты реализаторов по дате'){
                     await res.send(await OtchetRealizatoraShoro.getOtchetRealizatoraShoroByDate(data.data, data.organizator, data.region))
                 } else if(req.body.name == 'Реализатор'){
-                    await res.send(await RealizatorShoro.getRealizatorShoro1(req.body.search, req.body.sort, req.body.skip, user._id))
+                    await res.send(await RealizatorShoro.getRealizatorShoro(req.body.search, req.body.sort, req.body.skip, req.body.region))
+//                    await res.send(await RealizatorShoro.getRealizatorShoro1(req.body.search, req.body.sort, req.body.skip, user._id))
                 } else if(req.body.name == 'ТочкаВсе'){
                     await res.send(await PointShoro.getPointShoroAll(user._id))
                 }  else if(req.body.name == 'Цена1'){
