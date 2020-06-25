@@ -4,6 +4,7 @@ const OtchetOrganizatoraShoroModule = require('../module/otchetOrganizatoraShoro
 const RealizatorShoro = require('../models/realizatorShoro');
 const NakladnayaNaVecherniyVozvratShoro = require('../models/nakladnayaNaVecherniyVozvratShoro');
 const NakladnayaSklad1Shoro = require('../models/nakladnayaSklad1Shoro');
+const NakladnayaSklad2Shoro = require('../models/nakladnayaSklad2Shoro');
 const getTomorrow = require('./const').getTomorrow;
 const OrganizatorShoro = require('../models/organizatorShoro');
 const PlanShoro = require('../models/planShoro');
@@ -362,6 +363,9 @@ const calculateAll = async (object) => {
             findOrganizator = await OtchetOrganizatoraShoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
         }
         let findRealizators = await OtchetRealizatoraShoro.find({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
+    
+        
+    
         let findNakladnayaNaVecherniyVozvratShoro = await NakladnayaNaVecherniyVozvratShoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
         let findDataNakladnayaNaVecherniyVozvratShoro
         if(findNakladnayaNaVecherniyVozvratShoro!==null){
@@ -449,40 +453,258 @@ const calculateAll = async (object) => {
         findNakladnayaSklad1Shoro = await NakladnayaSklad1Shoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
         if(findNakladnayaSklad1Shoro!==null){
             findDataNakladnayaSklad1Shoro = JSON.parse(findNakladnayaSklad1Shoro.dataTable)
+
+            findDataNakladnayaSklad1Shoro['vydano']['r']['ml'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['r']['chl'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['r']['kl'] = 0
+
+            findDataNakladnayaSklad1Shoro['vydano']['d1']['ml'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d1']['chl'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d1']['kl'] = 0
+
+            findDataNakladnayaSklad1Shoro['vydano']['d2']['ml'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d2']['chl'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d2']['kl'] = 0
+
+            findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'] = 0
+            findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'] = 0
+
             findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25'] = 0
             findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10'] = 0
             findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl'] = 0
+
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['m25'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch25'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch10'] = 0
+            findDataNakladnayaSklad1Shoro['vozvrat']['s']['k10'] = 0
+
             for(let i = 0; i<findRealizators.length; i++){
                 let addDataTable = JSON.parse(findRealizators[i].dataTable)
                 if(checkInt(addDataTable.vozvrat.v.chl)>0){
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'] += checkInt(addDataTable.vozvrat.v.chl)
                     findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl'] += checkInt(addDataTable.vozvrat.v.chl)
                     if(addDataTable.vozvrat.v.chn25.length>0){
                         findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25'] += 1
-
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch25'] += 1
                     }
                     if(addDataTable.vozvrat.v.chn10.length>0){
                         findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10'] += 1
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch10'] += 1
 
                     }
                 }
                 if(checkInt(addDataTable.vozvrat.v.chl1)>0){
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl'] += checkInt(addDataTable.vozvrat.v.chl1)
                     findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl'] += checkInt(addDataTable.vozvrat.v.chl1)
                     if(addDataTable.vozvrat.v.chn251.length>0){
                         findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25'] += 1
-
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch25'] += 1
                     }
                     if(addDataTable.vozvrat.v.chn101.length>0){
                         findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10'] += 1
-
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch10'] += 1
                     }
                 }
+                if(checkInt(addDataTable.vozvrat.v.ml)>0) {
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'] += checkInt(addDataTable.vozvrat.v.ml)
+                    if(addDataTable.vozvrat.v.mn.length>0){
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['m25'] += 1
+                    }
+                }
+                if(checkInt(addDataTable.vozvrat.v.ml1)>0) {
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml'] += checkInt(addDataTable.vozvrat.v.ml1)
+                    if(addDataTable.vozvrat.v.mn1.length>0){
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['m25'] += 1
+                    }
+                }
+                if(checkInt(addDataTable.vozvrat.v.kl)>0) {
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'] += checkInt(addDataTable.vozvrat.v.kl)
+                    if(addDataTable.vozvrat.v.kn.length>0){
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['k10'] += 1
+                    }
+                }
+                if(checkInt(addDataTable.vozvrat.v.kl1)>0) {
+                    findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl'] += checkInt(addDataTable.vozvrat.v.kl1)
+                    if(addDataTable.vozvrat.v.kn1.length>0){
+                        findDataNakladnayaSklad1Shoro['vozvrat']['s']['k10'] += 1
+                    }
+                }
+
+                if(checkInt(addDataTable.vydano.r.ml)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['r']['ml'] += checkInt(addDataTable.vydano.r.ml)
+                }
+                if(checkInt(addDataTable.vydano.r.chl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['r']['chl'] += checkInt(addDataTable.vydano.r.chl)
+                }
+                if(checkInt(addDataTable.vydano.r.kl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['r']['kl'] += checkInt(addDataTable.vydano.r.kl)
+                }
+
+                if(checkInt(addDataTable.vydano.d1.ml)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d1']['ml'] += checkInt(addDataTable.vydano.d1.ml)
+                }
+                if(checkInt(addDataTable.vydano.d1.chl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d1']['chl'] += checkInt(addDataTable.vydano.d1.chl)
+                }
+                if(checkInt(addDataTable.vydano.d1.kl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d1']['kl'] += checkInt(addDataTable.vydano.d1.kl)
+                }
+
+                if(checkInt(addDataTable.vydano.d2.ml)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d2']['ml'] += checkInt(addDataTable.vydano.d2.ml)
+                }
+                if(checkInt(addDataTable.vydano.d2.chl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d2']['chl'] += checkInt(addDataTable.vydano.d2.chl)
+                }
+                if(checkInt(addDataTable.vydano.d2.kl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d2']['kl'] += checkInt(addDataTable.vydano.d2.kl)
+                }
+
+                if(checkInt(addDataTable.vydano.d3.ml)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'] += checkInt(addDataTable.vydano.d3.ml)
+                }
+                if(checkInt(addDataTable.vydano.d3.chl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'] += checkInt(addDataTable.vydano.d3.chl)
+                }
+                if(checkInt(addDataTable.vydano.d3.kl)>0) {
+                    findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'] += checkInt(addDataTable.vydano.d3.kl)
+                }
+
             }
-            findDataNakladnayaSklad1Shoro['vozvrat']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl'])
-            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch10'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch10'])
-            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch25'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch25'])
+
+
+            findDataNakladnayaSklad1Shoro['vydano']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['ml'])
+            findDataNakladnayaSklad1Shoro['vydano']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['kl'])
+            findDataNakladnayaSklad1Shoro['vydano']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vydano']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vydano']['d3']['chl'])
+
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ml'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ml']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ml'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['kl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['kl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['kl'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['chl'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['chl']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['chl'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch10'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch10'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['ch25'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['ch25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['ch25'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['k10'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['k10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['k10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['k10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['k10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['k10']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['k10'])
+            findDataNakladnayaSklad1Shoro['vozvrat']['i']['m25'] = checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['s']['m25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['n']['m25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['r']['m25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d1']['m25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d2']['m25']) + checkInt(findDataNakladnayaSklad1Shoro['vozvrat']['d3']['m25'])
+
             findDataNakladnayaSklad1Shoro = JSON.stringify(findDataNakladnayaSklad1Shoro)
             await NakladnayaSklad1Shoro.updateOne({_id: findNakladnayaSklad1Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad1Shoro}});
         }
+
+    let findNakladnayaSklad2Shoro = await NakladnayaSklad2Shoro.findOne({data: object.data, guidRegion: object.guidRegion, guidOrganizator: object.guidOrganizator})
+    if(findNakladnayaSklad2Shoro!==null){
+        let findDataNakladnayaSklad2Shoro = JSON.parse(findNakladnayaSklad2Shoro.dataTable)
+
+        findDataNakladnayaSklad2Shoro['vydano']['r']['sh02'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['r']['sh04'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['r']['l'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['r']['b'] = 0
+
+        findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d1']['l'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d1']['b'] = 0
+
+        findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d2']['l'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d2']['b'] = 0
+
+        findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d3']['l'] = 0
+        findDataNakladnayaSklad2Shoro['vydano']['d3']['b'] = 0
+
+        findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'] = 0
+        findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'] = 0
+        findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'] = 0
+        findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'] = 0
+
+        for(let i = 0; i<findRealizators.length; i++){
+            let addDataTable = JSON.parse(findRealizators[i].dataTable)
+            if(checkInt(addDataTable.vozvrat.v.s02)>0) {
+                findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'] += checkInt(addDataTable.vozvrat.v.s02)
+            }
+            if(checkInt(addDataTable.vozvrat.v.s04)>0) {
+                findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'] += checkInt(addDataTable.vozvrat.v.s04)
+            }
+            if(checkInt(addDataTable.vozvrat.v.sl)>0) {
+                findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'] += checkInt(addDataTable.vozvrat.v.sl)
+            }
+            if(checkInt(addDataTable.vozvrat.v.b)>0) {
+                findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'] += checkInt(addDataTable.vozvrat.v.b)
+            }
+
+            if(checkInt(addDataTable.vydano.r.s02)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['r']['sh02'] += checkInt(addDataTable.vydano.r.s02)
+            }
+            if(checkInt(addDataTable.vydano.r.s04)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['r']['sh04'] += checkInt(addDataTable.vydano.r.s04)
+            }
+            if(checkInt(addDataTable.vydano.r.sl)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['r']['l'] += checkInt(addDataTable.vydano.r.sl)
+            }
+            if(checkInt(addDataTable.vydano.r.b)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['r']['b'] += checkInt(addDataTable.vydano.r.b)
+            }
+
+            if(checkInt(addDataTable.vydano.d1.s02)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02'] += checkInt(addDataTable.vydano.d1.s02)
+            }
+            if(checkInt(addDataTable.vydano.d1.s04)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04'] += checkInt(addDataTable.vydano.d1.s04)
+            }
+            if(checkInt(addDataTable.vydano.d1.sl)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d1']['l'] += checkInt(addDataTable.vydano.d1.sl)
+            }
+            if(checkInt(addDataTable.vydano.d1.b)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d1']['b'] += checkInt(addDataTable.vydano.d1.b)
+            }
+
+            if(checkInt(addDataTable.vydano.d2.s02)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02'] += checkInt(addDataTable.vydano.d2.s02)
+            }
+            if(checkInt(addDataTable.vydano.d2.s04)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04'] += checkInt(addDataTable.vydano.d2.s04)
+            }
+            if(checkInt(addDataTable.vydano.d2.sl)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d2']['l'] += checkInt(addDataTable.vydano.d2.sl)
+            }
+            if(checkInt(addDataTable.vydano.d2.b)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d2']['b'] += checkInt(addDataTable.vydano.d2.b)
+            }
+
+            if(checkInt(addDataTable.vydano.d3.s02)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'] += checkInt(addDataTable.vydano.d3.s02)
+            }
+            if(checkInt(addDataTable.vydano.d3.s04)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'] += checkInt(addDataTable.vydano.d3.s04)
+            }
+            if(checkInt(addDataTable.vydano.d3.sl)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d3']['l'] += checkInt(addDataTable.vydano.d3.sl)
+            }
+            if(checkInt(addDataTable.vydano.d3.b)>0) {
+                findDataNakladnayaSklad2Shoro['vydano']['d3']['b'] += checkInt(addDataTable.vydano.d3.b)
+            }
+
+        }
+
+
+        findDataNakladnayaSklad2Shoro['vydano']['i']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh02'])
+        findDataNakladnayaSklad2Shoro['vydano']['i']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['sh04'])
+        findDataNakladnayaSklad2Shoro['vydano']['i']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['l'])
+        findDataNakladnayaSklad2Shoro['vydano']['i']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vydano']['r']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d1']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d2']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vydano']['d3']['b'])
+
+        findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh02'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh02']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh02'])
+        findDataNakladnayaSklad2Shoro['vozvrat']['iv']['sh04'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['sh04']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['sh04'])
+        findDataNakladnayaSklad2Shoro['vozvrat']['iv']['l'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['l']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['l'])
+        findDataNakladnayaSklad2Shoro['vozvrat']['iv']['b'] = checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['i']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['v']['b']) + checkInt(findDataNakladnayaSklad2Shoro['vozvrat']['s']['b'])
+
+        findDataNakladnayaSklad2Shoro = JSON.stringify(findDataNakladnayaSklad2Shoro)
+        await NakladnayaSklad2Shoro.updateOne({_id: findNakladnayaSklad2Shoro._id}, {$set: {dataTable: findDataNakladnayaSklad2Shoro}});
+    }
 
         let findPlan = await PlanShoro.findOne({date: (object.data).substring(3)})
         if(findPlan!==null) {
