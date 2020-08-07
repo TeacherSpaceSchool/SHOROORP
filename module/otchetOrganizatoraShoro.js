@@ -235,7 +235,7 @@ const createOtchetOrganizatoraShoro = async (data, organizator, region, guidOrga
                 },
                 'r': {
                     'otr': 0,
-                    'oo': 100,
+                    'oo': 200,
                     'ntp': 0,
                     'att': 0,
                     'at': '',
@@ -251,7 +251,7 @@ const createOtchetOrganizatoraShoro = async (data, organizator, region, guidOrga
                     's': '',
                     'lkm': '',
                 },
-                'i': -100,
+                'i': -200,
                 'm': false,
             }),
             data: data,
