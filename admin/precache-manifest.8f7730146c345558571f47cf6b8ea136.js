@@ -52,8 +52,8 @@ self.__precacheManifest = [
     "url": "/static/js/11.88de078a.chunk.js"
   },
   {
-    "revision": "34f58b958c39649caab4",
-    "url": "/static/js/12.34f58b95.chunk.js"
+    "revision": "672c741aab1e80e7488b",
+    "url": "/static/js/12.672c741a.chunk.js"
   },
   {
     "revision": "8f893b3b02525b4aaa1a",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/static/js/15.b2cf77e7.chunk.js"
   },
   {
-    "revision": "43ceb206efd27e899553",
-    "url": "/static/js/16.43ceb206.chunk.js"
+    "revision": "bd73be4d2fb7b87b9926",
+    "url": "/static/js/16.bd73be4d.chunk.js"
   },
   {
     "revision": "b45a0f21190d6d2e6302",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "url": "/static/js/28.46517d71.chunk.js"
   },
   {
-    "revision": "2b9c9bd9c067058c4a33",
-    "url": "/static/js/runtime~main.2b9c9bd9.js"
+    "revision": "ced59585f3ede06fe2d1",
+    "url": "/static/js/runtime~main.ced59585.js"
   },
   {
     "revision": "587aa57a3b0d8e77054cf1c59b64cac7",
@@ -136,7 +136,7 @@ self.__precacheManifest = [
     "url": "/static/media/gora.7c2a4ce2.jpg"
   },
   {
-    "revision": "a4bdb92ee8b94f18c1b0cd0156138dd1",
+    "revision": "1a681629c00dd73542d74e18b0f571a7",
     "url": "/index.html"
   }
 ];
