@@ -12,14 +12,17 @@ const PriceShoro = require('../models/priceShoro');
 const TaraShoro = require('../models/taraShoro');
 const RealizatorShoro = require('../models/realizatorShoro');
 const UserShoro = require('../models/userShoro');
-let logger = require('logger').createLogger('integrate1C.log');
-let { checkInt, month1 } = require('../module/const');
-let { generateXML } = require('../module/outXMLShoro');
+const put = require('logger').createLogger('put.log');
+const puterror = require('logger').createLogger('puterror.log');
+const outerror = require('logger').createLogger('outerror.log');
+const deleterror = require('logger').createLogger('deleterror.log');
+const { checkInt, month1 } = require('../module/const');
+const { generateXML } = require('../module/outXMLShoro');
 
 /* GET home page. */
 router.post('/put', async (req, res, next) => {
     try{
-        logger.info(req.body);
+        put.info(req.body);
         if(req.body.elements[0].attributes.mode==='manager'){
             for(let i = 0; i<req.body.elements[0].elements.length; i++) {
                 //guid   req.body.elements[0].elements[i].attributes.guid
@@ -48,7 +51,10 @@ router.post('/put', async (req, res, next) => {
                         await OrganizatorShoro.create(_object);
                     }
                     else if (find.name !== req.body.elements[0].elements[i].elements[0].text) {
-                        await OrganizatorShoro.updateMany({guid: req.body.elements[0].elements[i].attributes.guid}, {$set: {name: req.body.elements[0].elements[i].elements[0].text}});
+                        await OrganizatorShoro.updateMany(
+                            {guid: req.body.elements[0].elements[i].attributes.guid},
+                            {$set: {name: req.body.elements[0].elements[i].elements[0].text}}
+                            );
                     }
                 } else {
                     let object = await OrganizatorShoro.findOne({guid: req.body.elements[0].elements[i].attributes.guid})
@@ -576,7 +582,7 @@ router.post('/put', async (req, res, next) => {
         await res.status(200);
         await res.end('success')
     } catch (err) {
-        logger.info(err.message);
+        puterror.info(err.message);
         console.error(err)
         res.status(501);
         res.end('error')
@@ -589,7 +595,7 @@ router.get('/out', async (req, res, next) => {
         await res.status(200);
         await res.end(await generateXML())
     } catch (err) {
-        logger.info(err.message);
+        outerror.info(err.message);
         console.error(err)
         res.status(501);
         res.end('error')
@@ -603,7 +609,7 @@ router.get('/delete', async (req, res, next) => {
         await OutXMLShoro.deleteMany()
         await res.end('success')
     } catch (err) {
-        logger.info(err.message);
+        deleterror.info(err.message);
         console.error(err)
         res.status(501);
         res.end('error')

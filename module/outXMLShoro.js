@@ -29,8 +29,8 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
         }
     }
     data.date = dateXML[0]+'.'+dateXML[1]+'.'+dateXML[2]
-    data.manager = otchetRealizators[0].guidOrganizator
-    data.region = otchetRealizators[0].guidRegion
+    data.manager = otchetRealizators[0].guidOrganizator?otchetRealizators[0].guidOrganizator:''
+    data.region = otchetRealizators[0].guidRegion?otchetRealizators[0].guidRegion:''
     for(let i=0;i<otchetRealizators.length;i++){
         let dataOtchetRealizator = JSON.parse(otchetRealizators[i].dataTable)
         data.points[i] = {
