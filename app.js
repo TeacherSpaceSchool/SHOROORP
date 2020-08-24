@@ -61,6 +61,7 @@ app.use(function(req, res, next){
         next();
     }
 });
+app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.json());
 app.use(bodyParser.xml());
 app.use(express.static(path.join(__dirname, 'aclient')));
