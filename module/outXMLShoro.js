@@ -28,9 +28,6 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
                 dateXML[1] = '0'+dateXML[1]
         }
     }
-    data.date = dateXML[0]+'.'+dateXML[1]+'.'+dateXML[2]
-    data.manager = otchetRealizators[0].guidOrganizator?otchetRealizators[0].guidOrganizator:''
-    data.region = otchetRealizators[0].guidRegion?otchetRealizators[0].guidRegion:''
     for(let i=0;i<otchetRealizators.length;i++){
         let dataOtchetRealizator = JSON.parse(otchetRealizators[i].dataTable)
         data.points[i] = {
@@ -84,9 +81,9 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
     }
     let object = new OutXMLShoro({
         data: data,
-        date: date,
-        guidRegion: guidRegion,
-        guidOrganizator: guidOrganizator
+        date: dateXML[0]+'.'+dateXML[1]+'.'+dateXML[2],
+        guidRegion: guidRegion?guidRegion:'',
+        guidOrganizator: guidOrganizator?guidOrganizator:''
     });
     await OutXMLShoro.create(object);
 
@@ -96,7 +93,7 @@ module.exports.generateXML = async ()=>{
     let result = [ { root: [ { _attr: { mode: 'sales'} }] } ];
     let outXMLShoros = await OutXMLShoro.find()
     for(let i=0;i<outXMLShoros.length;i++){
-        let item = { item: [{ _attr: { date: outXMLShoros[i].data.date, manager: outXMLShoros[i].guidOrganizator, region: outXMLShoros[i].guidRegion}}]};
+        let item = { item: [{ _attr: { date: outXMLShoros[i].date, manager: outXMLShoros[i].guidOrganizator, region: outXMLShoros[i].guidRegion}}]};
         for(let ii=0;ii<outXMLShoros[i].data.points.length;ii++){
             let place = { place: [{ _attr: { guid: outXMLShoros[i].data.points[ii].guid, seller: outXMLShoros[i].data.points[ii].seller, time_from: outXMLShoros[i].data.points[ii].time_from, time_to: outXMLShoros[i].data.points[ii].time_to, cash: outXMLShoros[i].data.points[ii].cash, rent: outXMLShoros[i].data.points[ii].rent, meal: outXMLShoros[i].data.points[ii].meal}}]};
             for(let iii=0;iii<outXMLShoros[i].data.points[ii].products.length;iii++){
