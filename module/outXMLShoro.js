@@ -34,9 +34,9 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
             guid: otchetRealizators[i].guidPoint,
             seller: otchetRealizators[i].guidRealizator,
             time_from: dataOtchetRealizator['vydano']['r']['time']+':00',
-            time_to: dataOtchetRealizator['vozvrat']['v']['time']+':00',
+            time_to: dataOtchetRealizator['vozvrat']['v']['time']&&dataOtchetRealizator['vozvrat']['v']['time'].length?dataOtchetRealizator['vozvrat']['v']['time']:'0'+':00',
             cash: dataOtchetRealizator['i']['fv']+'.00',
-            rent: dataOtchetRealizator['i']['m']+'.00',
+            rent: dataOtchetRealizator['i']['m']&&dataOtchetRealizator['i']['m'].length?dataOtchetRealizator['i']['m']:'0'+'.00',
             meal: dataOtchetRealizator['i']['o']+'.00',
             products: [
                 {
