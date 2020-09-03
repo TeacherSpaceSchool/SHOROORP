@@ -79,7 +79,6 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
             ]
         }
     }
-    console.log(guidOrganizator)
     if(!(await OutXMLShoro.findOne({date: dateXML[0]+'.'+dateXML[1]+'.'+dateXML[2], guidRegion: guidRegion?guidRegion:'', guidOrganizator: guidOrganizator?guidOrganizator:''}))) {
         let object = new OutXMLShoro({
             data: data,

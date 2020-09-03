@@ -157,6 +157,7 @@ const getOrganizatorShoroByName = async (phone) => {
             guidRegion: object.guidRegion,
             _id: object._id,
             user: object.user,
+            guid: object.guid
         }
         return res
 
