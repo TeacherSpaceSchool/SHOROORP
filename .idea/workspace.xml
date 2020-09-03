@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aef3c9e9-2922-42a5-aaa5-79ce22b59d1a" name="Default" comment="" />
+    <list default="true" id="aef3c9e9-2922-42a5-aaa5-79ce22b59d1a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deleterror.log" afterPath="$PROJECT_DIR$/deleterror.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/outXMLShoro.js" afterPath="$PROJECT_DIR$/module/outXMLShoro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outerror.log" afterPath="$PROJECT_DIR$/outerror.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/put.log" afterPath="$PROJECT_DIR$/put.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puterror.log" afterPath="$PROJECT_DIR$/puterror.log" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,39 +24,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="otchetRealizatoraShoro.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/otchetRealizatoraShoro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="41" lean-forward="false" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            <state relative-caret-position="156">
+              <caret line="331" column="21" lean-forward="false" selection-start-line="331" selection-start-column="10" selection-end-line="331" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="integrate1c.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="600" column="24" lean-forward="true" selection-start-line="600" selection-start-column="24" selection-end-line="600" selection-end-column="24" />
-              <folding>
-                <element signature="e#1347#3655#0" expanded="false" />
-                <element signature="e#3719#8545#0" expanded="false" />
-                <element signature="e#10982#13300#0" expanded="false" />
-                <element signature="e#13365#67070#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="outXMLShoro.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="outXMLShoro.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/outXMLShoro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="36" column="163" lean-forward="false" selection-start-line="36" selection-start-column="163" selection-end-line="36" selection-end-column="163" />
+            <state relative-caret-position="-323">
+              <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
               <folding>
-                <element signature="e#1955#2957#0" expanded="false" />
-                <element signature="e#2978#3715#0" expanded="false" />
+                <element signature="e#1974#2976#0" expanded="false" />
+                <element signature="e#2997#3734#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,9 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calculateAll(</find>
-      <find>await OutXMLShoro</find>
-      <find>prepareXML</find>
       <find>&quot;</find>
       <find>products</find>
       <find>guidм</find>
@@ -91,12 +80,15 @@
       <find>200</find>
       <find>logger</find>
       <find>bodyParser.json</find>
-      <find>guidOrganizator</find>
       <find>generateXML</find>
-      <find>prepareXML(</find>
       <find>outXMLShoros[i].data</find>
       <find>upd</find>
       <find>updateMa</find>
+      <find>findOne</find>
+      <find>updatemany</find>
+      <find>prepareXML</find>
+      <find>guidOrganizator</find>
+      <find>prepareXML(</find>
     </findStrings>
     <replaceStrings>
       <replace>day</replace>
@@ -258,8 +250,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,12 +567,13 @@
       <workItem from="1598275653496" duration="3338000" />
       <workItem from="1598338912338" duration="1019000" />
       <workItem from="1598343181370" duration="35000" />
-      <workItem from="1598517254427" duration="306000" />
+      <workItem from="1598517254427" duration="1955000" />
+      <workItem from="1599151891155" duration="1388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1549244000" />
+    <option name="totallyTimeSpent" value="1552281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,15 +586,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.7832423" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.7714808" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.21675774" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26379544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14195184" sideWeight="0.2285192" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26379544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26110363" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26110363" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -609,7 +604,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -976,13 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/otchetRealizatoraShoro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="453" column="44" lean-forward="false" selection-start-line="453" selection-start-column="44" selection-end-line="453" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
@@ -993,8 +980,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="600" column="24" lean-forward="true" selection-start-line="600" selection-start-column="24" selection-end-line="600" selection-end-column="24" />
+        <state relative-caret-position="331">
+          <caret line="126" column="43" lean-forward="false" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
           <folding>
             <element signature="e#1347#3655#0" expanded="false" />
             <element signature="e#3719#8545#0" expanded="false" />
@@ -1006,12 +993,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/outXMLShoro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="36" column="163" lean-forward="false" selection-start-line="36" selection-start-column="163" selection-end-line="36" selection-end-column="163" />
+        <state relative-caret-position="-323">
+          <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
           <folding>
-            <element signature="e#1955#2957#0" expanded="false" />
-            <element signature="e#2978#3715#0" expanded="false" />
+            <element signature="e#1974#2976#0" expanded="false" />
+            <element signature="e#2997#3734#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/otchetRealizatoraShoro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="331" column="21" lean-forward="false" selection-start-line="331" selection-start-column="10" selection-end-line="331" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
