@@ -30,11 +30,24 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
     }
     for(let i=0;i<otchetRealizators.length;i++){
         let dataOtchetRealizator = JSON.parse(otchetRealizators[i].dataTable)
+        let time_from = ''
+        if(dataOtchetRealizator['vydano']['r']['time']&&dataOtchetRealizator['vydano']['r']['time'].length){
+            time_from = `${dataOtchetRealizator['vydano']['r']['time']}:00`
+        }
+        else if(dataOtchetRealizator['vydano']['d1']['time']&&dataOtchetRealizator['vydano']['d1']['time'].length){
+            time_from = `${dataOtchetRealizator['vydano']['d1']['time']}:00`
+        }
+        else if(dataOtchetRealizator['vydano']['d2']['time']&&dataOtchetRealizator['vydano']['d2']['time'].length){
+            time_from = `${dataOtchetRealizator['vydano']['d2']['time']}:00`
+        }
+        else if(dataOtchetRealizator['vydano']['d3']['time']&&dataOtchetRealizator['vydano']['d3']['time'].length){
+            time_from = `${dataOtchetRealizator['vydano']['d3']['time']}:00`
+        }
         data.points[i] = {
             guid: otchetRealizators[i].guidPoint,
             seller: otchetRealizators[i].guidRealizator,
-            time_from: `${dataOtchetRealizator['vydano']['r']['time']}:00`,
-            time_to: dataOtchetRealizator['vozvrat']['v']['time']&&dataOtchetRealizator['vozvrat']['v']['time'].length?`${dataOtchetRealizator['vozvrat']['v']['time']}'00:00'`:'',
+            time_from: time_from,
+            time_to: dataOtchetRealizator['vozvrat']['v']['time']&&dataOtchetRealizator['vozvrat']['v']['time'].length?`${dataOtchetRealizator['vozvrat']['v']['time']}:00`:'',
             cash: `${dataOtchetRealizator['i']['fv']}.00`,
             rent: `${dataOtchetRealizator['i']['m']?dataOtchetRealizator['i']['m']:'0'}.00`,
             meal: `${dataOtchetRealizator['i']['o']}.00`,
@@ -79,6 +92,7 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
             ]
         }
     }
+    console.log(guidOrganizator)
     if(!(await OutXMLShoro.findOne({date: dateXML[0]+'.'+dateXML[1]+'.'+dateXML[2], guidRegion: guidRegion?guidRegion:'', guidOrganizator: guidOrganizator?guidOrganizator:''}))) {
         let object = new OutXMLShoro({
             data: data,

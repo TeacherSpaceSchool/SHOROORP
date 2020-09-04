@@ -228,7 +228,7 @@ const getRealizatorShoroById = async (id) => {
             guidRegion: object.guidRegion,
             guid: object.guid,
             guidPoint: object.guidPoint,
-            guidOrganizator: object.guidOrganizator,
+            guidOrganizator: organizator.guid,
             _id: object._id,
             user: object.user,
         }
