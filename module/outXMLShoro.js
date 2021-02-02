@@ -54,40 +54,40 @@ module.exports.prepareXML = async (date, guidRegion, guidOrganizator)=>{
             products: [
                 {
                     guid: products['Максым'],
-                    issued: dataOtchetRealizator['vydano']['i']['ml'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['ml'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['ml']?dataOtchetRealizator['vydano']['i']['ml']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['ml']?dataOtchetRealizator['vozvrat']['p']['ml']:'0'}.00`
                 },
                 {
                     guid: products['Чалап'],
-                    issued: dataOtchetRealizator['vydano']['i']['chl'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['chl'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['chl']?dataOtchetRealizator['vydano']['i']['chl']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['chl']?dataOtchetRealizator['vozvrat']['p']['chl']:'0'}.00`
                 },
                 {
                     guid: products['Квас'],
-                    issued: dataOtchetRealizator['vydano']['i']['kl'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['kl'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['kl']?dataOtchetRealizator['vydano']['i']['kl']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['kl']?dataOtchetRealizator['vozvrat']['p']['kl']:'0'}.00`
                 },
                 {
                     guid: products['Стакан Легенда'],
-                    issued: dataOtchetRealizator['vydano']['i']['sl'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['sl'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['sl']?dataOtchetRealizator['vydano']['i']['sl']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['sl']?dataOtchetRealizator['vozvrat']['p']['sl']:'0'}.00`
                 },
             ],
             tares: [
                 {
                     guid: tares['0.20'],
-                    issued: dataOtchetRealizator['vydano']['i']['s02'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['s02'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['s02']?dataOtchetRealizator['vydano']['i']['s02']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['s02']?dataOtchetRealizator['vozvrat']['p']['s02']:'0'}.00`
                 },
                 {
                     guid: tares['0.40'],
-                    issued: dataOtchetRealizator['vydano']['i']['s04'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['s04'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['s04']?dataOtchetRealizator['vydano']['i']['s04']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['s04']?dataOtchetRealizator['vozvrat']['p']['s04']:'0'}.00`
                 },
                 {
                     guid: tares['1.00'],
-                    issued: dataOtchetRealizator['vydano']['i']['b'].toString(),
-                    sold: dataOtchetRealizator['vozvrat']['p']['b'].toString()
+                    issued: `${dataOtchetRealizator['vydano']['i']['b']?dataOtchetRealizator['vydano']['i']['b']:'0'}.00`,
+                    sold: `${dataOtchetRealizator['vozvrat']['p']['b']?dataOtchetRealizator['vozvrat']['p']['b']:'0'}.00`
                 },
             ]
         }

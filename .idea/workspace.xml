@@ -27,11 +27,9 @@
       <file leaf-file-name="outXMLShoro.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/outXMLShoro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="49" column="178" lean-forward="false" selection-start-line="49" selection-start-column="178" selection-end-line="49" selection-end-column="178" />
-              <folding>
-                <element signature="e#3745#4482#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="89" column="26" lean-forward="false" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,14 +37,15 @@
       <file leaf-file-name="integrate1c.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+            <state relative-caret-position="283">
+              <caret line="604" column="19" lean-forward="false" selection-start-line="604" selection-start-column="13" selection-end-line="604" selection-end-column="19" />
               <folding>
                 <element signature="e#1248#67275#0" expanded="false" />
                 <element signature="e#1347#3655#0" expanded="false" />
                 <element signature="e#3719#8545#0" expanded="false" />
                 <element signature="e#10982#13300#0" expanded="false" />
                 <element signature="e#13365#67070#0" expanded="false" />
+                <element signature="e#67324#67597#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,7 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>guidм</find>
       <find>guidRealizator</find>
       <find>console.log</find>
       <find>mode: 'sales'</find>
@@ -114,6 +112,7 @@
       <find>ОрганизаторПоИмени</find>
       <find>prepareXML(</find>
       <find>РеализаторПоID</find>
+      <find>rent</find>
     </findStrings>
     <replaceStrings>
       <replace>day</replace>
@@ -591,12 +590,12 @@
       <workItem from="1599151891155" duration="4122000" />
       <workItem from="1599220987071" duration="2903000" />
       <workItem from="1611060754225" duration="14000" />
-      <workItem from="1612249447697" duration="1434000" />
+      <workItem from="1612249447697" duration="3377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1559366000" />
+    <option name="totallyTimeSpent" value="1561309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1017,25 +1016,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/integrate1c.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="283">
+          <caret line="604" column="19" lean-forward="false" selection-start-line="604" selection-start-column="13" selection-end-line="604" selection-end-column="19" />
           <folding>
             <element signature="e#1248#67275#0" expanded="false" />
             <element signature="e#1347#3655#0" expanded="false" />
             <element signature="e#3719#8545#0" expanded="false" />
             <element signature="e#10982#13300#0" expanded="false" />
             <element signature="e#13365#67070#0" expanded="false" />
+            <element signature="e#67324#67597#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/outXMLShoro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="49" column="178" lean-forward="false" selection-start-line="49" selection-start-column="178" selection-end-line="49" selection-end-column="178" />
-          <folding>
-            <element signature="e#3745#4482#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="89" column="26" lean-forward="false" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
