@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aef3c9e9-2922-42a5-aaa5-79ce22b59d1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deleterror.log" afterPath="$PROJECT_DIR$/deleterror.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/outXMLShoro.js" afterPath="$PROJECT_DIR$/module/outXMLShoro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outerror.log" afterPath="$PROJECT_DIR$/outerror.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/put.log" afterPath="$PROJECT_DIR$/put.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puterror.log" afterPath="$PROJECT_DIR$/puterror.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -607,12 +602,12 @@
       <workItem from="1611060754225" duration="14000" />
       <workItem from="1612249447697" duration="4238000" />
       <workItem from="1613301025197" duration="1251000" />
-      <workItem from="1613566537856" duration="980000" />
+      <workItem from="1613566537856" duration="1008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1564401000" />
+    <option name="totallyTimeSpent" value="1564429000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
