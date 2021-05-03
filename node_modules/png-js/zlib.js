@@ -30,7 +30,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-window.DecodeStream = (function() {
+var DecodeStream = (function() {
   function constructor() {
     this.pos = 0;
     this.bufferLength = 0;
@@ -121,7 +121,7 @@ window.DecodeStream = (function() {
   return constructor;
 })();
 
-window.FlateStream = (function() {
+var FlateStream = (function() {
   var codeLenCodeMap = new Uint32Array([
     16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15
   ]);
